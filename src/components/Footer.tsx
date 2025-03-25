@@ -1,6 +1,6 @@
 "use client";
 
-import { FaLocationDot, FaPhone, FaEnvelopeOpen } from "react-icons/fa6";
+import { FaPhone, FaEnvelopeOpen } from "react-icons/fa6";
 import { FaFacebookF, FaYoutube, FaInstagram } from "react-icons/fa";
 
 export const Footer = () => {
@@ -12,9 +12,6 @@ export const Footer = () => {
                 <div className="footer-section">
                     <h5 className="footer-heading">Address</h5>
                     <div className="footer-info">
-                        <p className="footer-text">
-                            <FaLocationDot className="footer-icon" /> Kalupur, Dreams Destinations, Ahmedabad
-                        </p>
                         <p className="footer-text">
                             <FaPhone className="footer-icon" /> +919521265253
                         </p>

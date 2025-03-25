@@ -21,7 +21,7 @@ const Navbar = () => {
             <Link href="/" shallow={true} className={`nav-item nav-link ${pathname === "/" ? "active" : ""}`}>Home</Link>
             <Link href="/packages" shallow={true} className={`nav-item nav-link ${pathname === "/packages" ? "active" : ""}`}>Packages</Link>
             <Link href="/contact-us" shallow={true} className={`nav-item nav-link ${pathname === "/contact-us" ? "active" : ""}`}>Contact Us</Link>
-            <Link href="/itinerary" shallow={true} className={`nav-item nav-link ${pathname === "/itinerary" ? "active" : ""}`}>Itinerary</Link>
+            <Link href="/accomodation" shallow={true} className={`nav-item nav-link ${pathname === "/accomodation" ? "active" : ""}`}>Accomodation</Link>
             <Link href="/gallery" shallow={true} className={`nav-item nav-link ${pathname === "/gallery" ? "active" : ""}`}>Gallery</Link>
             <Link href="/activities" shallow={true} className={`nav-item nav-link ${pathname === "/activities" ? "active" : ""}`}>Activities</Link>
           </div>

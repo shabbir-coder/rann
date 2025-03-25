@@ -5,28 +5,36 @@ import { motion } from "framer-motion";
 const rooms = [
     {
         id: 1,
-        title: "Standard Room",
-        price: "$99.00 / night",
-        features: ["Free WiFi", "Air Conditioning", "Complimentary Breakfast"],
-        img: "assets/animal-lg-1.jpg",
-        delay: 0.1,
+        title: "Deluxe AC Room",
+        price: "₹7,500",
+        features: ["Living Room / Bedroom", "Luxury toiletries", "Privilege Transfers"],
+        img: "/img/rooms/Deluxe-AC-Accomodation.jpg",
+        delay: 0.6,
     },
     {
         id: 2,
-        title: "Deluxe Room",
-        price: "$149.00 / night",
-        features: ["Free WiFi", "Balcony with View", "Room Service Available"],
-        img: "assets/animal-lg-2.jpg",
-        delay: 0.3,
+        title: "Premium Room",
+        price: "₹8,500",
+        features: ["Luxury Amenities", "Cozy Sitting Area", "Double Bed / Attached Bathroom"],
+        img: "/img/rooms/Premium-Accomodation.jpg",
+        delay: 0.9,
     },
     {
         id: 3,
-        title: "Suite Room",
-        price: "$199.00 / night",
-        features: ["Luxury Amenities", "Private Lounge Access", "Complimentary Spa Access"],
-        img: "assets/animal-lg-3.jpg",
-        delay: 0.5,
+        title: "Rajwadi Room",
+        price: "₹35,000",
+        features: ["Spread across 900 sq. ft.", "Luxury Amenities", "Privilege Transfers"],
+        img: "/img/rooms/Rajwadi-Accomodation.jpg",
+        delay: 1.2,
     },
+    // {
+    //     id: 4,
+    //     title: "Darbari Room",
+    //     price: "₹55,000",
+    //     features: ["Two Bedrooms / One Living Room", "King-sized beds", "Private dining area", "Luxury toiletries"],
+    //     img: "/img/rooms/Darbari-Accomodation.jpg",
+    //     delay: 0.3,
+    // },
 ];
 
 const RoomsSection = () => {
@@ -67,7 +75,7 @@ const RoomsSection = () => {
                                 <img className="img-fluid" src={room.img} alt={room.title} />
                                 <h1 className="display-1">{`0${room.id}`}</h1>
                                 <h4 className="text-white mb-3">{room.title}</h4>
-                                <h3 className="text-primary mb-4">{room.price}</h3>
+                                <h6 className="text-white mb-4">Starting from <span className="h3 text-primary">{room.price}</span></h6>
                                 {room.features.map((feature, index) => (
                                     <p key={index}>
                                         <i className="fa fa-check text-primary me-3"></i>

@@ -1,4 +1,3 @@
-import Header from '@/components/Header';
 import Head from 'next/head';
 
 export default function Gallery() {
@@ -7,7 +6,6 @@ export default function Gallery() {
       <Head>
         <title>Tours and Travels - Gallery</title>
       </Head>
-      <Header />
     </>
   );
 }
