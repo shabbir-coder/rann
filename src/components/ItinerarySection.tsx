@@ -15,11 +15,11 @@ const ItinerarySection = () => {
       {/* Tabs for both Desktop and Mobile */}
       <div
       className="sticky-top-mobile">
-        <ul className="nav nav-tabs border-bottom-0" id="itineraryTabs" role="tablist">
+        <ul className="priceNav priceNav-tabs border-bottom-0" id="itineraryTabs" role="tablist">
           {data.map((item, index) => (
-            <li className="nav-item flex-grow-1 text-center" key={index} role="presentation">
+            <li className="priceNav-item flex-grow-1 text-center" key={index} role="presentation">
               <button
-                className={`nav-link w-100 ${index === 0 ? "active" : ""}`}
+                className={`priceNav-link w-100 ${index === 0 ? "active" : ""}`}
                 id={`tab${index + 1}-tab`}
                 data-bs-toggle="tab"
                 data-bs-target={`#tab${index + 1}`}
