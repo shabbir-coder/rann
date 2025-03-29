@@ -112,7 +112,7 @@
 
 .navbar .dropdown-toggle::after {
     border: none;
-    content: "\f107";
+    content: "▿";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     vertical-align: middle;
@@ -735,7 +735,6 @@
     display: flex;
     gap: 20px;
     justify-content: center;
-    overflow-x: auto;
     padding-bottom: 10px;
     scrollbar-width: thin;
     scrollbar-color: var(--primary) #f4f4f4;
@@ -760,14 +759,15 @@
   flex: 0 0 auto; /* Prevent cards from shrinking or growing */
   width: 300px;
   background-color: #fff;
-  border-radius: 8px;
+  border-radius: 10px !important;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   border: 2px solid transparent;
   scroll-snap-align: center;
-  height: 450px;
+  height: 330px;
+  text-align: center;
 }
 
 .card:hover {
@@ -778,9 +778,6 @@
   .card.active {
     border: 2px solid var(--primary);
   }
-
-
-  
   
   /* Image Section */
   .image-section img {
@@ -792,12 +789,11 @@
   /* Content Section */
   .content-section {
     padding: 15px;
-    text-align: left;
     font-family: 'Poppins', sans-serif;
   }
   
   .package-name {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 600;
     color: var(--primary);
     margin: 0 0 10px 0;
@@ -821,7 +817,6 @@
     font-size: 16px;
     font-weight: bold;
     color: #222;
-    text-align: right;
     margin-bottom: 10px;
   }
   

@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
-import { FaTent } from "react-icons/fa6";
-import { HiClipboardList } from "react-icons/hi";
+// import { FaTent } from "react-icons/fa6";
+// import { HiClipboardList } from "react-icons/hi";
 import { motion } from "framer-motion";
 import Image from 'next/image';
 
@@ -44,12 +44,12 @@ export default function PackageCards({ packages, selectedNight, onSelect }: Pack
           </div>
           <div className="content-section">
             <h3 className="package-name">{pkg.name}</h3>
-            <p className="places">
+            {/* <p className="places">
             <FaTent className='text-secondary'/>
               &nbsp;{pkg.places}</p>
             <p className="itinerary">
               <HiClipboardList/>
-              &nbsp;{pkg.itinerary}</p>
+              &nbsp;{pkg.itinerary}</p> */}
               <div className="bottom-section">
                 <p className="price">Starting from <span>₹{pkg.price}</span></p>
                 <button className="book-now">Book Now</button>
