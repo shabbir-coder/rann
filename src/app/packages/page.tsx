@@ -15,7 +15,7 @@ export default function Packages() {
       name: '1 Night / 2 days',
       places: 'Dhordo',
       itinerary: 'Lunch, Activities, Sunset point, Cultural Shows, Yoga ',
-      price: '5,500/pp',
+      price: '₹5,500/pp',
     },
     {
       id: 2,
@@ -23,7 +23,7 @@ export default function Packages() {
       name: '2 Night / 3 days',
       places: 'Dhordo, Kala Dungar',
       itinerary: 'All of Day 1 and Kala Dungar and sightseeing',
-      price: '11,000/pp',
+      price: '₹11,000/pp',
     },
     {
       id: 3,
@@ -31,7 +31,7 @@ export default function Packages() {
       name: '3 Night / 4 days',
       places: 'Dhordo, Kala Dungar, Dholavira',
       itinerary: 'All of Day 1, 2 and Dholavira (Road to heaven) ',
-      price: '14,500/pp',
+      price: '₹14,500/pp',
     },
     {
       id: 4,
@@ -39,7 +39,7 @@ export default function Packages() {
       name: '4 Night / 5 days',
       places: 'Dhordo, Kala Dungar, Dholavira, Nirona Village ',
       itinerary: 'All of Day 1, 2, 3 and Visit Nirona Village',
-      price: '19,000/pp',
+      price: '₹19,000/pp',
     },
   ];
 
