@@ -86,6 +86,9 @@ const BookingForm = () => {
       name: "",
       dob: "",
       address: "",
+      city: "",
+      state: "",
+      isdCode: "91",
       phone: "",
       email: "",
       gender: "",
@@ -123,7 +126,9 @@ const BookingForm = () => {
       guestData.idProof && 
       guestData.idNumber &&
       guestData.email &&
-      guestData.address
+      guestData.address &&
+      guestData.city &&
+      guestData.state
     );
   };
 
@@ -208,44 +213,38 @@ const BookingForm = () => {
               transition={{ duration: 0.3 }}
               className="booking-step"
             >
-              <h2 className="section-title">Dates & Accommodation</h2>
-              
-              <div className="form-group">
-                <label className="form-label">Check-in Date</label>
-                <input
-                  type="date"
-                  className="form-input"
-                  value={formData.checkInDate}
-                  onChange={(e) => setFormData({ ...formData, checkInDate: e.target.value })}
-                  min={new Date().toISOString().split('T')[0]}
-                />
-              </div>
-              
-              <div className="form-grid">
-                <div className="form-group">
-                  <label className="form-label">Number of Adults</label>
-                  <select
-                    className="form-select"
-                    value={formData.adults}
-                    onChange={(e) => setFormData({ ...formData, adults: parseInt(e.target.value) })}
-                  >
-                    {[1, 2, 3, 4].map(num => (
-                      <option key={num} value={num}>{num}</option>
-                    ))}
-                  </select>
+            <h2 className="section-title">Dates & Accommodation</h2>
+            
+            <div className="row">
+              <div className="col-12 col-md-6">
+                  <div className="form-group">
+                    <label className="form-label">Number of Adults</label>
+                    {/* <select
+                      className="form-selectz"
+                      value={formData.adults}
+                      onChange={(e) => setFormData({ ...formData, adults: parseInt(e.target.value) })}
+                    >
+                      {[1, 2, 3, 4].map(num => (
+                        <option key={num} value={num}>{num}</option>
+                      ))}
+                    </select> */}
+                    <input type="number" className="form-input" 
+                      value={formData?.adults}
+                      onChange={(e) => setFormData({ ...formData, adults: parseInt(e.target.value) })}
+                     />
+                  </div>
                 </div>
-                
-                <div className="form-group">
-                  <label className="form-label">Number of Children (under 12)</label>
-                  <select
-                    className="form-select"
-                    value={formData.children}
-                    onChange={(e) => setFormData({ ...formData, children: parseInt(e.target.value) })}
-                  >
-                    {[0, 1, 2].map(num => (
-                      <option key={num} value={num}>{num}</option>
-                    ))}
-                  </select>
+                <div className="col-12 col-md-4">
+                  <div className="form-group">
+                    <label className="form-label">Check-in Date</label>
+                    <input
+                      type="date"
+                      className="form-input"
+                      value={formData.checkInDate}
+                      onChange={(e) => setFormData({ ...formData, checkInDate: e.target.value })}
+                      min={new Date().toISOString().split('T')[0]}
+                    />
+                  </div>
                 </div>
               </div>
               
@@ -309,18 +308,24 @@ const BookingForm = () => {
                       required
                     />
                   </div>
-                  
-                  <div className="form-group md:col-span-2">
-                    <label className="form-label">Address*</label>
-                    <input
-                      type="text"
-                      className="form-input"
-                      value={formData.guestData.address}
-                      onChange={(e) => updateGuestData('address', e.target.value)}
+
+                  <div className="form-group">
+                    <label className="form-label">Gender*</label>
+                    <select
+                      className="form-selectz"
+                      value={formData.guestData.gender}
+                      onChange={(e) => updateGuestData('gender', e.target.value)}
                       required
-                    />
+                    >
+                      <option value="">Select Gender</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Other">Other</option>
+                    </select>
                   </div>
-                  
+
+                </div>
+                <div className="form-grid">
                   <div className="form-group">
                     <label className="form-label">Email*</label>
                     <input
@@ -342,26 +347,48 @@ const BookingForm = () => {
                       required
                     />
                   </div>
-                  
-                  <div className="form-group">
-                    <label className="form-label">Gender*</label>
-                    <select
-                      className="form-select"
-                      value={formData.guestData.gender}
-                      onChange={(e) => updateGuestData('gender', e.target.value)}
+
+                </div>
+                <div className="form-grid">
+                  <div className="form-group md:col-span-2">
+                    <label className="form-label">City*</label>
+                    <input
+                      type="text"
+                      className="form-input"
+                      value={formData.guestData.city}
+                      onChange={(e) => updateGuestData('city', e.target.value)}
                       required
-                    >
-                      <option value="">Select Gender</option>
-                      <option value="Male">Male</option>
-                      <option value="Female">Female</option>
-                      <option value="Other">Other</option>
-                    </select>
+                    />
                   </div>
-                  
+
+                  <div className="form-group md:col-span-2">
+                    <label className="form-label">state*</label>
+                    <input
+                      type="text"
+                      className="form-input"
+                      value={formData.guestData.state}
+                      onChange={(e) => updateGuestData('state', e.target.value)}
+                      required
+                    />
+                  </div>
+
+                  <div className="form-group md:col-span-2">
+                    <label className="form-label">Address*</label>
+                    <input
+                      type="text"
+                      className="form-input"
+                      value={formData.guestData.address}
+                      onChange={(e) => updateGuestData('address', e.target.value)}
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div className="form-grid">                  
                   <div className="form-group">
                     <label className="form-label">ID Proof Type*</label>
                     <select
-                      className="form-select"
+                      className="form-selectz"
                       value={formData.guestData.idProof}
                       onChange={(e) => updateGuestData('idProof', e.target.value)}
                       required
