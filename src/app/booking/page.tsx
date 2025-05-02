@@ -79,7 +79,7 @@ const BookingForm = () => {
   const [formData, setFormData] = useState({
     package: "",
     checkInDate: "",
-    adults: 1,
+    adults: '1',
     children: 0,
     tentType: "",
     guestData: {
@@ -230,7 +230,7 @@ const BookingForm = () => {
                     </select> */}
                     <input type="number" className="form-input" 
                       value={formData?.adults}
-                      onChange={(e) => setFormData({ ...formData, adults: parseInt(e.target.value) })}
+                      onChange={(e) => setFormData({ ...formData, adults: e.target.value })}
                      />
                   </div>
                 </div>
@@ -467,7 +467,7 @@ const BookingForm = () => {
                     <div className="review-item">
                       <span className="review-label">Guests:</span>
                       <span className="review-value">
-                        {formData.adults} Adult{formData.adults !== 1 ? 's' : ''}
+                        {formData.adults} Adult{formData.adults !== '1' ? 's' : ''}
                         {formData.children > 0 ? `, ${formData.children} Child${formData.children !== 1 ? 'ren' : ''}` : ''}
                       </span>
                     </div>

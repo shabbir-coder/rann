@@ -51,7 +51,7 @@ export default function PackageCards({ packages, selectedNight, onSelect }: Pack
               <HiClipboardList/>
               &nbsp;{pkg.itinerary}</p> */}
               <div className="bottom-section">
-                <p className="price">Starting from <span>₹{pkg.price}</span></p>
+                <p className="price">Starting from <span>{pkg.price}</span></p>
                 <button className="book-now">Book Now</button>
               </div>
           </div>

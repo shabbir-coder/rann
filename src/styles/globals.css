@@ -1933,3 +1933,204 @@
 .booking-step {
   animation: fadeIn var(--transition-normal) forwards;
 }
+
+.modal-content {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  border: none;
+}
+
+.form-control, .form-select {
+  border: 1px solid #e0e0e0;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #b82e88;
+  box-shadow: 0 0 0 0.25rem rgba(184, 46, 136, 0.25);
+}
+
+.btn-primary {
+  background-color: #b82e88;
+  border: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.15s ease;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #60003e;
+  transform: translateY(-2px);
+}
+
+.enquiry-image-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+}
+
+@media (max-width: 767.98px) {
+  .modal-dialog {
+    margin: 0.5rem;
+  }
+  
+  .modal-body {
+    padding: 1.5rem;
+  }
+}
+
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1040;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-offcanvas {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 85%;
+  max-width: 350px;
+  height: 100%;
+  background-color: white;
+  z-index: 1050;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.mobile-offcanvas.open {
+  right: 0;
+}
+
+.offcanvas-header {
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #b82e88;
+  cursor: pointer;
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.5rem;
+}
+
+.mobile-nav-item {
+  padding: 0.75rem 0;
+  color: #333;
+  font-weight: 500;
+  border-bottom: 1px solid #eee;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.mobile-nav-item.active {
+  color: #b82e88;
+}
+
+.mobile-nav-item:hover {
+  color: #b82e88;
+}
+
+.mobile-dropdown {
+  margin-bottom: 0.5rem;
+}
+
+.mobile-dropdown-toggle {
+  padding: 0.75rem 0;
+  color: #333;
+  font-weight: 500;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-dropdown-toggle.active {
+  color: #b82e88;
+}
+
+.dropdown-arrow {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #333;
+  transition: transform 0.3s;
+}
+
+.dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+.mobile-dropdown-menu {
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.mobile-dropdown-menu.open {
+  max-height: 300px;
+}
+
+.mobile-dropdown-item {
+  padding: 0.5rem 0;
+  color: #666;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.mobile-dropdown-item.active {
+  color: #b82e88;
+}
+
+
+.mobile-book-btn {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #b82e88;
+  color: white;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.mobile-book-btn:hover {
+  background-color: #9c2470;
+  color: white;
+}
+
+@media (min-width: 992px) {
+  .mobile-menu-overlay,
+  .mobile-offcanvas {
+    display: none;
+  }
+}

@@ -56,7 +56,7 @@ const RoomsSection = () => {
                         </h1>
                     </div>
                     <div className="col-lg-6 text-lg-end">
-                        <a className="btn btn-primary py-3 px-5" href="#">View All Rooms</a>
+                        <a className="btn btn-primary py-3 px-5" href="/accomodation">View All Rooms</a>
                     </div>
                 </motion.div>
 
