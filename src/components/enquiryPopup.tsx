@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, forwardRef, useImperativeHandle } from 'react';
 import { Modal } from 'bootstrap';
+import { submitEnquiry } from '@/services/enquiryService';
 
 interface FormData {
   name: string;
@@ -87,10 +88,11 @@ const EnquiryPopup = forwardRef((props, ref) => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (validateForm()) {
-      console.log('Form submitted:', formData);
+      await submitEnquiry(formData);
+
       setIsSubmitted(true);
       setTimeout(() => {
         modalRef.current?.hide();
@@ -115,7 +117,7 @@ const EnquiryPopup = forwardRef((props, ref) => {
       {/* Manual trigger button - can be placed anywhere */}
       <button 
         onClick={openModal}
-        className="btn btn-primary d-none d-md-inline-block"
+        className="btn btn-primary d-none"
         style={{ backgroundColor: '#b82e88', border: 'none' }}
       >
         Enquire Now
@@ -124,7 +126,7 @@ const EnquiryPopup = forwardRef((props, ref) => {
       {/* Modal */}
       <div className="modal fade" id="enquiryModal" tabIndex={-1} aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered modal-lg">
-          <div className="modal-content">
+          <div className="modal-content rounded-4 ">
             <div className="modal-header border-0 pb-0">
               <button 
                 type="button" 
@@ -133,18 +135,17 @@ const EnquiryPopup = forwardRef((props, ref) => {
                 aria-label="Close"
               ></button>
             </div>
-            <div className="modal-body p-4 p-md-5">
+            <div className="modal-body p-2 px-3 p-md-2">
               <div className="row">
                 {/* Left Side - Image */}
                 <div className="col-md-6 d-none d-md-block">
                   <div 
                     className="enquiry-image-container rounded-4 h-100"
                     style={{
-                      backgroundImage: 'url(https://images.unsplash.com/photo-1582977311977-9d8d8579f68f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80)',
+                      backgroundImage: 'url(/img/gallery/pr5.jpg)',
                       backgroundSize: 'cover',
                       backgroundPosition: 'center',
                       height: '100%',
-                      position: 'relative'
                     }}
                   >
                     <div 
@@ -167,7 +168,7 @@ const EnquiryPopup = forwardRef((props, ref) => {
                 
                 {/* Right Side - Form */}
                 <div className="col-md-6">
-                  <h2 className="modal-title mb-4 text-center text-md-start">
+                  <h2 className="modal-title mb-2 text-center text-md-start">
                     <span style={{ color: '#b82e88' }}>Plan Your</span> Rann Utsav Trip
                   </h2>
                   
@@ -266,7 +267,7 @@ const EnquiryPopup = forwardRef((props, ref) => {
                         <i className="fas fa-paper-plane ms-2"></i>
                       </button>
                       
-                      <p className="text-muted small mt-3 text-center">
+                      <p className="text-muted small mt-2 text-center">
                         We&apos;ll get back to you within 24 hours
                       </p>
                     </form>

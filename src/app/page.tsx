@@ -6,7 +6,7 @@ import AboutSection from '@/components/AboutSection';
 import ServicesSection from '@/components/ServicesSection';
 import GallerySection from '@/components/GallerySection';
 import RoomsSection from '@/components/RoomsSection';
-import EnquiryPopup from "@/components/enquiryPopup";
+import EnquiryPopup from '@/components/EnquiryPopup';
 // import "bootstrap/dist/css/bootstrap.min.css";
 
 // import Spinner from '@/components/Spinner';

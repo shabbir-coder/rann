@@ -1965,10 +1965,6 @@
   transform: translateY(-2px);
 }
 
-.enquiry-image-overlay {
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
-}
-
 @media (max-width: 767.98px) {
   .modal-dialog {
     margin: 0.5rem;

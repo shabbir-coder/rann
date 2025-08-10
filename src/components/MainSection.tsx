@@ -2,9 +2,10 @@
 
 import Image from "next/image";
 import useEmblaCarousel from 'embla-carousel-react'
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Autoplay from 'embla-carousel-autoplay'
 import { motion } from "framer-motion";
+import EnquiryPopup from "./EnquiryPopup";
 
 
 const MainSection = () => {
@@ -15,6 +16,8 @@ const MainSection = () => {
       console.log(emblaApi.slideNodes()) // Access API
     }
   }, [emblaApi])
+
+  const enquiryModalRef = useRef<{ openModal: () => void }>(null);
 
     return (
       <div className="container-fluid bg-dark p-0 mb-5">
@@ -31,7 +34,7 @@ const MainSection = () => {
               The majestic Rann of Kutch awaits you
             </h4>
           <div className="mt-3">
-            <a href="" className="btn btn-primary btn-ripple py-sm-3 px-3 px-sm-5">
+            <a href="" onClick={() => enquiryModalRef.current?.openModal()} className="btn btn-primary btn-ripple py-sm-3 px-3 px-sm-5">
               Get Call
             </a>
           </div>
@@ -88,6 +91,7 @@ const MainSection = () => {
             </div>
           </div>
         </motion.div>
+        <EnquiryPopup ref={enquiryModalRef} />
     </div>
     );
   };
