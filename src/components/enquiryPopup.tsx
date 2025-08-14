@@ -1,7 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
 import { useState, useEffect, useRef, forwardRef, useImperativeHandle } from 'react';
-import { Modal } from 'bootstrap';
 import { submitEnquiry } from '@/services/enquiryService';
 
 interface FormData {
@@ -31,7 +31,7 @@ const EnquiryPopup = forwardRef((props, ref) => {
   
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const modalRef = useRef<Modal | null>(null);
+  const modalRef = useRef<any>(null);
   const modalElementRef = useRef<HTMLDivElement | null>(null);
 
   // Expose the openModal function to parent components
@@ -41,23 +41,28 @@ const EnquiryPopup = forwardRef((props, ref) => {
     }
   }));
 
-  // Initialize modal
+  // Initialize modal only in the browser
   useEffect(() => {
-    const element = document.getElementById('enquiryModal');
-    if (element && !modalRef.current) {
-      modalElementRef.current = element as HTMLDivElement;
-      modalRef.current = new Modal(element);
-      
-      // Auto-show after 2 seconds
-      const timer = setTimeout(() => {
-        modalRef.current?.show();
-      }, 2000);
+    let modalInstance: any = null;
 
-      return () => {
-        clearTimeout(timer);
-        modalRef.current?.dispose();
-      };
-    }
+    import('bootstrap').then(({ Modal }) => {
+      const element = document.getElementById('enquiryModal');
+      if (element && !modalRef.current) {
+        modalElementRef.current = element as HTMLDivElement;
+        modalInstance = new Modal(element);
+        modalRef.current = modalInstance;
+        
+        // Auto-show after 2 seconds
+        const timer = setTimeout(() => {
+          modalRef.current?.show();
+        }, 2000);
+
+        return () => {
+          clearTimeout(timer);
+          modalInstance?.dispose();
+        };
+      }
+    });
   }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -114,7 +119,7 @@ const EnquiryPopup = forwardRef((props, ref) => {
 
   return (
     <>
-      {/* Manual trigger button - can be placed anywhere */}
+      {/* Manual trigger button */}
       <button 
         onClick={openModal}
         className="btn btn-primary d-none"
