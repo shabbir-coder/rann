@@ -25,7 +25,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <meta content="" name="description" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <meta name="google-site-verification" content="B32e3JwC1FO4-IILdH1O8hhKhY05wpli2FSihaq_ZrU"/>
+        <meta name="google-site-verification" content="B32e3JwC1FO4-IILdH1O8hhKhY05wpli2FSihaq_ZrU" />
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Quicksand:wght@600;700&display=swap" rel="stylesheet" />
         <link
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"

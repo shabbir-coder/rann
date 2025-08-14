@@ -5,7 +5,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 import { useEffect, useRef } from "react";
 import Autoplay from 'embla-carousel-autoplay'
 import { motion } from "framer-motion";
-import EnquiryPopup from "./EnquiryPopup";
+import EnquiryPopup from "./enquiryPopup";
 
 
 const MainSection = () => {
@@ -92,7 +92,7 @@ const MainSection = () => {
           </div>
         </motion.div>
         <EnquiryPopup ref={enquiryModalRef} />
-    </div>  
+    </div>
     );
   };
   

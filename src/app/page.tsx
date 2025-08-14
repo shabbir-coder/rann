@@ -6,12 +6,7 @@ import AboutSection from '@/components/AboutSection';
 import ServicesSection from '@/components/ServicesSection';
 import GallerySection from '@/components/GallerySection';
 import RoomsSection from '@/components/RoomsSection';
-import EnquiryPopup from '@/components/EnquiryPopup';
-// import "bootstrap/dist/css/bootstrap.min.css";
-
-// import Spinner from '@/components/Spinner';
-// import Hero from '../components/Hero';
-// import Footer from '../components/Footer';
+import EnquiryPopup from '@/components/enquiryPopup';
 
 export default function Home() {
 
@@ -19,7 +14,6 @@ export default function Home() {
     <>
       <MainSection />
       <AboutSection />
-      {/* <FactsSection /> */}
       <ServicesSection />
       <GallerySection />
       <RoomsSection />
