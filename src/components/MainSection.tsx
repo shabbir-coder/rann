@@ -92,7 +92,7 @@ const MainSection = () => {
           </div>
         </motion.div>
         <EnquiryPopup ref={enquiryModalRef} />
-    </div>
+    </div>  
     );
   };
   
