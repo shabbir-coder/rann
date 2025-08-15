@@ -20,7 +20,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <title>Tours and Travels - Home</title>
         <meta name="description" content="Discover amazing tours and travel packages with Tours and Travels. Book your dream vacation today!" />
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-        <meta name="google-site-verification" content="B32e3JwC1FO4-IILdH1O8hhKhY05wpli2FSihaq_ZrU" />
+        <meta name="google-site-verification" content="X-r2tcgRjSIYWoM6zAyziozpunBrPLMkbdMHASoKtJM" />
         <meta content="" name="keywords" />
         <meta content="" name="description" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
