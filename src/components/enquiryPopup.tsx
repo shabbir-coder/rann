@@ -117,7 +117,7 @@ const EnquiryPopup = forwardRef((props, ref) => {
           month: '',
           package: ''
         });
-      }, 2000);
+      }, 10000);
     }
   };
 
