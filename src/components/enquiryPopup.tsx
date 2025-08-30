@@ -59,7 +59,7 @@ const EnquiryPopup = forwardRef((props, ref) => {
 
         element.addEventListener("hidden.bs.modal", () => {
           document.body.classList.remove("modal-open");
-          document.body.style='';
+          document.body.style.cssText = '';
           const backdrops = document.querySelectorAll(".modal-backdrop");
           backdrops.forEach(b => b.remove());
         });
