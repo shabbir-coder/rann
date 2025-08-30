@@ -57,11 +57,19 @@ const EnquiryPopup = forwardRef((props, ref) => {
           modalRef.current?.show();
         }, 2000);
 
+        element.addEventListener("hidden.bs.modal", () => {
+          document.body.classList.remove("modal-open");
+          document.body.style='';
+          const backdrops = document.querySelectorAll(".modal-backdrop");
+          backdrops.forEach(b => b.remove());
+        });
+
         return () => {
           clearTimeout(timer);
           modalInstance?.dispose();
         };
       }
+      
     });
   }, []);
 
@@ -136,7 +144,7 @@ const EnquiryPopup = forwardRef((props, ref) => {
               <button 
                 type="button" 
                 className="btn-close" 
-                data-bs-dismiss="modal" 
+                onClick={() => modalRef.current?.hide()}
                 aria-label="Close"
               ></button>
             </div>
