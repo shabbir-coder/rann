@@ -1,6 +1,6 @@
 
 export const metadata = {
-  title: "Tours and Travels - Packages",
+  title: "Rannutsav - Packages",
 };
 
 import ContactUsForm from '@/components/ContactUsForm';

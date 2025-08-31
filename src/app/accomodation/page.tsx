@@ -111,7 +111,7 @@ export default function Accomodation() {
   return (
     <>
       <Head>
-        <title>Tours and Travels - Accomodation</title>
+        <title>Rannutsav - Accomodation</title>
       </Head>
       <HeaderBanner
         bgImage="/img/_RC10943.jpg"

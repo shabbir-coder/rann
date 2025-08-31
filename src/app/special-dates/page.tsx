@@ -50,7 +50,7 @@ const Timeline = () => {
   return (
     <>
         <Head>
-            <title>Tours and Travels - Packages</title>
+            <title>Rannutsav - Packages</title>
         </Head>
         <HeaderBanner
         bgImage="/img/_RC10943.jpg" // Change to your image path

@@ -4,7 +4,7 @@ export default function Gallery() {
   return (
     <>
       <Head>
-        <title>Tours and Travels - Gallery</title>
+        <title>Rannutsav - Gallery</title>
       </Head>
     </>
   );

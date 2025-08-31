@@ -5,7 +5,7 @@ export default function Activities() {
   return (
     <>
       <Head>
-        <title>Tours and Travels - Activities</title>
+        <title>Rannutsav - Activities</title>
       </Head>
        <HeaderBanner
               bgImage="/img/_RC10943.jpg"
