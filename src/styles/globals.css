@@ -2179,11 +2179,28 @@
   border-color: none !important;
 }
 
-.accordion-item{
-  /* border: none !important; */
-  /* border-radius: 10px; */
+/* FAQ Title Colors */
+.text-black {
+  color: #000000 !important;
 }
 
+/* Gallery swiper */
+.gallery-section .swiper-slide {
+  height: 400px;
+}
+
+.gallery-section .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+@media (max-width: 767px) {
+  .gallery-section .swiper-slide {
+    height: 300px;
+  }
+}
 
 @media (min-width: 992px) {
 
@@ -2191,9 +2208,4 @@
   .mobile-offcanvas {
     display: none;
   }
-}
-
-/* FAQ Title Colors */
-.text-black {
-  color: #000000 !important;
 }
