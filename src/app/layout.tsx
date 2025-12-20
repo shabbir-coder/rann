@@ -8,6 +8,8 @@ import BootstrapClient from "@/utils/BootstrapClient";
 import Navbar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import { EnquiryProvider } from "@/components/EnquiryContext";
+import FloatingEnquiryButton from "@/components/FloatingEnquiryButton";
 
 export const metadata: Metadata = {
   title: "Official Rann Utsav Tent City Dhordo 2025-26",
@@ -92,10 +94,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
       </head>
       <body>
         <BootstrapClient />
-        <Header />
-        <Navbar />
-        {children}
-        <Footer />
+        <EnquiryProvider>
+          <Header />
+          <Navbar />
+          {children}
+          <Footer />
+          <FloatingEnquiryButton />
+        </EnquiryProvider>
 
         {/* Structured Data - Event Schema */}
         <script

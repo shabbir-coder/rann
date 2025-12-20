@@ -8,7 +8,7 @@ export default function Activities() {
         <title>Rannutsav - Activities</title>
       </Head>
        <HeaderBanner
-              bgImage="/img/_RC10943.jpg"
+              bgImage="/img/bg3-lg.jpg"
               title="Activities To Do"
               breadcrumbs={[
                 { label: "Home", href: "/" },

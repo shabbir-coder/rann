@@ -13,7 +13,7 @@ export default function ActivitiesPage() {
 
   const data ={
     nature: {
-      headerImage: "/img/_RC10943.jpg",
+      headerImage: "/img/bg6.jpg",
       breadcrumb: [{ label: "Home", href: "/" }, { label: "Nature" }],
       title: "Where one location multiplies into many destinations",
       subTitle: "Discover the simple joys of life here amid the seaside, palaces reminiscent of glorious past, mountains that offer you a glimpse of the neighbouring nation, rural charms of Kutch villages, replete with mud houses, mud paintings and unique pottery.",
@@ -46,7 +46,7 @@ export default function ActivitiesPage() {
       ]
     },
     architecture: {
-      headerImage: "/img/_RC10943.jpg",
+      headerImage: "/img/bg7.jpg",
       breadcrumb: [{ label: "Home", href: "/" }, { label: "Architecture" }],
       title: "Architectural Marvels of Kutch",
       subTitle: "Explore the heritage and grandeur of Kutch through its palaces, forts, and ancient temples that tell tales of the past.",
@@ -79,7 +79,7 @@ export default function ActivitiesPage() {
       ]
     },
     culture: {
-      headerImage: "/img/_RC10943.jpg",
+      headerImage: "/img/_MG_0473.jpg",
       breadcrumb: [{ label: "Home", href: "/" }, { label: "Culture" }],
       title: "Cultural Heritage of Kutch",
       subTitle: "Experience the rich traditions, crafts, and folk heritage of Kutch through its villages, art forms, and festivals.",

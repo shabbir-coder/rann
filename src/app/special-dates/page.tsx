@@ -49,57 +49,53 @@ const Timeline = () => {
 
   return (
     <>
-        <Head>
-            <title>Rannutsav - Packages</title>
-        </Head>
-        <HeaderBanner
-        bgImage="/img/_RC10943.jpg" // Change to your image path
+      <Head>
+        <title>Rannutsav - Packages</title>
+      </Head>
+      <HeaderBanner
+        bgImage="/img/_RC10943.jpg"
         title="Rann Utsav Special Dates"
-        breadcrumbs={[
-            { label: "Home", href: "/" },
-            { label: "Special Dates" }
-        ]}
-        />
-        <div className="containerTimeline">
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Special Dates" }]}
+      />
+      <div className="containerTimeline">
         <div className="headerTimeline">
-            <h6 className="text-2xl font-bold mb-4 border-left">Mark your calendar for these unforgettable desert experiences</h6>
+          <h6 className="text-2xl font-bold mb-4 border-left">
+            Mark your calendar for these unforgettable desert experiences
+          </h6>
         </div>
-        
+
         <div className="timeline">
-            {timelineData.map((yearData, yearIndex) => (
+          {timelineData.map((yearData, yearIndex) => (
             <div key={yearIndex} className="yearBlock">
-                <div className="yearMarker">
+              <div className="yearMarker">
                 <div className="yearCircle"></div>
                 <h2 className="year">{yearData.year}</h2>
-                </div>
-                
-                <div className="eventsContainer">
+              </div>
+
+              <div className="eventsContainer">
                 {yearData.events.map((monthData, monthIndex) => (
-                    <div key={monthIndex} className="monthBlock">
+                  <div key={monthIndex} className="monthBlock">
                     <h3 className="month">{monthData.month}</h3>
-                    
+
                     <div className="eventsList">
-                        {monthData.details.map((detail, detailIndex) => {
+                      {monthData.details.map((detail, detailIndex) => {
                         return (
-                            <div 
-                            key={detailIndex} 
-                            className="eventCard"
-                            >
+                          <div key={detailIndex} className="eventCard">
                             <div className="eventHeader">
-                                <span className="eventDate">{detail.date}</span>
-                                <span className="eventName">{detail.event}</span>
+                              <span className="eventDate">{detail.date}</span>
+                              <span className="eventName">{detail.event}</span>
                             </div>
-                            </div>
+                          </div>
                         );
-                        })}
+                      })}
                     </div>
-                    </div>
+                  </div>
                 ))}
-                </div>
+              </div>
             </div>
-            ))}
+          ))}
         </div>
-        </div>
+      </div>
     </>
   );
 };

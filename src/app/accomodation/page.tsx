@@ -114,7 +114,7 @@ export default function Accomodation() {
         <title>Rannutsav - Accomodation</title>
       </Head>
       <HeaderBanner
-        bgImage="/img/_RC10943.jpg"
+        bgImage="/img/bg2-lg.jpg"
         title="Accomodations"
         breadcrumbs={[
           { label: "Home", href: "/" },

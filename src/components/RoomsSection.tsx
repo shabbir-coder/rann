@@ -1,43 +1,37 @@
 "use client";
 
 import { motion } from "framer-motion";
+import PackageCards from "./ProductsCards";
 
-const rooms = [
+const packagesList = [
     {
         id: 1,
-        title: "Deluxe AC Room",
-        price: "₹7,500",
-        features: ["Living Room / Bedroom", "Luxury toiletries", "Privilege Transfers"],
-        img: "/img/rooms/Deluxe-AC-Accomodation.jpg",
-        delay: 0.6,
+        image: '/img/pr1.jpg',
+        name: '1 Night / 2 days',
+        places: 'Dhordo',
+        itinerary: 'Lunch, Activities, Sunset point, Cultural Shows, Yoga ',
+        price: '₹5,500/pp',
     },
     {
         id: 2,
-        title: "Premium Room",
-        price: "₹8,500",
-        features: ["Luxury Amenities", "Cozy Sitting Area", "Double Bed / Attached Bathroom"],
-        img: "/img/rooms/Premium-Accomodation.jpg",
-        delay: 0.9,
+        image: '/img/pr3.jpg',
+        name: '2 Night / 3 days',
+        places: 'Dhordo, Kala Dungar',
+        itinerary: 'All of Day 1 and Kala Dungar and sightseeing',
+        price: '₹11,000/pp',
     },
     {
         id: 3,
-        title: "Rajwadi Room",
-        price: "₹35,000",
-        features: ["Spread across 900 sq. ft.", "Luxury Amenities", "Privilege Transfers"],
-        img: "/img/rooms/Rajwadi-Accomodation.jpg",
-        delay: 1.2,
+        image: '/img/pr7.jpg',
+        name: '3 Night / 4 days',
+        places: 'Dhordo, Kala Dungar, Dholavira',
+        itinerary: 'All of Day 1, 2 and Dholavira (Road to heaven) ',
+        price: '₹14,500/pp',
     },
-    // {
-    //     id: 4,
-    //     title: "Darbari Room",
-    //     price: "₹55,000",
-    //     features: ["Two Bedrooms / One Living Room", "King-sized beds", "Private dining area", "Luxury toiletries"],
-    //     img: "/img/rooms/Darbari-Accomodation.jpg",
-    //     delay: 0.3,
-    // },
 ];
 
 const RoomsSection = () => {
+
     return (
         <div className="container-xxl py-5">
             <div className="container">
@@ -50,43 +44,18 @@ const RoomsSection = () => {
                     transition={{ duration: 0.6 }}
                 >
                     <div className="col-lg-6">
-                        <p><span className="text-primary me-2">#</span>Room Selection</p>
+                        <p><span className="text-primary me-2">#</span>Package Selection</p>
                         <h1 className="display-5 mb-0">
-                            Choose The Perfect <span className="text-primary">Room</span> For Your Stay
+                            Choose The Perfect <span className="text-primary">Package</span> For Your Stay
                         </h1>
                     </div>
                     <div className="col-lg-6 text-lg-end">
-                        <a className="btn btn-primary py-3 px-5" href="/accomodation">View All Rooms</a>
+                        <a className="btn btn-primary py-3 px-5" href="/packages">View All</a>
                     </div>
                 </motion.div>
 
-                {/* Room Options */}
-                <div className="row g-4">
-                    {rooms.map((room) => (
-                        <motion.div
-                            key={room.id}
-                            className="col-lg-4 col-md-6"
-                            initial={{ opacity: 0, y: 50 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, amount: 0.2 }}
-                            transition={{ duration: 0.6, delay: room.delay }}
-                        >
-                            <div className="membership-item position-relative">
-                                <img className="img-fluid" src={room.img} alt={room.title} />
-                                <h1 className="display-1">{`0${room.id}`}</h1>
-                                <h4 className="text-white mb-3">{room.title}</h4>
-                                <h6 className="text-white mb-4">Starting from <span className="h3 text-primary">{room.price}</span></h6>
-                                {room.features.map((feature, index) => (
-                                    <p key={index}>
-                                        <i className="fa fa-check text-primary me-3"></i>
-                                        {feature}
-                                    </p>
-                                ))}
-                                <a className="btn btn-outline-light px-4 mt-3" href="#">Book Now</a>
-                            </div>
-                        </motion.div>
-                    ))}
-                </div>
+                {/* Package Cards */}
+                <PackageCards packages={packagesList} />
             </div>
         </div>
     );
