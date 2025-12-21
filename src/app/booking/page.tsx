@@ -79,28 +79,58 @@ const BookingForm = () => {
   const [formData, setFormData] = useState({
     package: "",
     checkInDate: "",
-    adults: '1',
-    children: 0,
     tentType: "",
-    guestData: {
-      name: "",
-      dob: "",
-      address: "",
-      city: "",
-      state: "",
-      isdCode: "91",
-      phone: "",
+    numTents: 1,
+    tents: [{ adults: 1 }],
+    adults: 1,
+    contactData: {
+      firstName: "",
+      lastName: "",
       email: "",
-      gender: "",
-      idProof: "",
-      idNumber: ""
+      phone: "",
+      country: "",
+      state: "",
+      city: "",
+      pincode: "",
+      pickup: ""
     },
-    specialRequests: ""
+    travelers: [] as Array<{
+      tent: number;
+      name: string;
+      age: string;
+      gender: string;
+      number: string;
+      foodType: string;
+      country: string;
+    }>,
+    specialRequests: "",
+    termsAccepted: false
+  });
+
+  const [errors, setErrors] = useState({
+    package: "",
+    checkInDate: "",
+    tentType: "",
+    contactData: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      country: "",
+      state: "",
+      city: "",
+      pincode: ""
+    },
+    travelers: [] as string[],
+    termsAccepted: ""
   });
 
   const nextStep = () => {
     if (validateStep(currentStep)) {
-      setCurrentStep(prev => Math.min(prev + 1, 3)); // 3 is the last step index
+      if (currentStep === 0) {
+        initializeTravelers();
+      }
+      setCurrentStep(prev => Math.min(prev + 1, 2)); // 2 is the last step index
     }
   };
 
@@ -110,33 +140,94 @@ const BookingForm = () => {
 
   const validateStep = (step: number) => {
     switch(step) {
-      case 0: return !!formData.package;
-      case 1: return !!formData.checkInDate && !!formData.tentType;
-      case 2: return validateGuestData();
+      case 0: return !!formData.package && !!formData.checkInDate && !!formData.tentType;
+      case 1: return validateContactData() && validateTravelers();
+      case 2: return formData.termsAccepted;
       default: return true;
     }
   };
 
-  const validateGuestData = () => {
-    const { guestData } = formData;
+  const validateContactData = () => {
+    const { contactData } = formData;
     return (
-      guestData.name && 
-      guestData.dob && 
-      guestData.gender && 
-      guestData.idProof && 
-      guestData.idNumber &&
-      guestData.email &&
-      guestData.address &&
-      guestData.city &&
-      guestData.state
+      contactData.firstName &&
+      contactData.lastName &&
+      contactData.email &&
+      contactData.phone &&
+      contactData.country &&
+      contactData.state &&
+      contactData.city &&
+      contactData.pincode
     );
   };
 
-  const updateGuestData = (field: string, value: string) => {
+  const validateTravelers = () => {
+    return formData.travelers.every(traveler =>
+      traveler.name &&
+      traveler.age &&
+      traveler.gender &&
+      traveler.number &&
+      traveler.foodType &&
+      traveler.country
+    );
+  };
+
+
+  const updateNumTents = (num: number) => {
     setFormData(prev => ({
       ...prev,
-      guestData: {
-        ...prev.guestData,
+      numTents: num,
+      tents: Array.from({ length: num }, (_, i) => prev.tents[i] || { adults: 1 })
+    }));
+  };
+
+  const updateTentAdults = (tentIndex: number, adults: number) => {
+    setFormData(prev => ({
+      ...prev,
+      tents: prev.tents.map((tent, i) => i === tentIndex ? { ...tent, adults } : tent)
+    }));
+  };
+
+  const initializeTravelers = () => {
+    const newTravelers: Array<{
+      tent: number;
+      name: string;
+      age: string;
+      gender: string;
+      number: string;
+      foodType: string;
+      country: string;
+    }> = [];
+    formData.tents.forEach((tent, tentIndex) => {
+      for (let i = 0; i < tent.adults; i++) {
+        newTravelers.push({
+          tent: tentIndex + 1,
+          name: "",
+          age: "",
+          gender: "",
+          number: "",
+          foodType: "",
+          country: ""
+        });
+      }
+    });
+    setFormData(prev => ({ ...prev, travelers: newTravelers }));
+  };
+
+  const updateTraveler = (index: number, field: string, value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      travelers: prev.travelers.map((traveler, i) =>
+        i === index ? { ...traveler, [field]: value } : traveler
+      )
+    }));
+  };
+
+  const updateContactData = (field: string, value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      contactData: {
+        ...prev.contactData,
         [field]: value
       }
     }));
@@ -149,14 +240,14 @@ const BookingForm = () => {
         
         <div className="progress-container">
           <div className="progress-bar">
-            <div 
-              className="progress-fill" 
-              style={{ width: `${(currentStep / 3) * 100}%` }} // 3 steps total
+            <div
+              className="progress-fill"
+              style={{ width: `${(currentStep / 2) * 100}%` }} // 3 steps total (0,1,2)
             />
           </div>
-          {["Select Package", "Choose Dates", "Guest Details", "Review"].map((label, index) => (
-            <div 
-              key={label} 
+          {["Personal Info", "Contact Details", "Review"].map((label, index) => (
+            <div
+              key={label}
               className={`progress-step ${currentStep >= index ? 'active' : ''}`}
             >
               <div className="step-number">{index + 1}</div>
@@ -168,73 +259,35 @@ const BookingForm = () => {
 
       <main className="booking-content">
         <AnimatePresence mode="wait">
-          {/* Package Selection Step */}
+          {/* Personal Info Step */}
           {currentStep === 0 && (
             <motion.div
-              key="package"
+              key="personal"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
               className="booking-step"
             >
-              <h2 className="section-title">Select Your Package</h2>
-              <div className="package-grid">
-                {PACKAGES.map(pkg => (
-                  <div
-                    key={pkg.id}
-                    className={`package-card ${formData.package === pkg.code ? 'selected' : ''}`}
-                    onClick={() => setFormData({ ...formData, package: pkg.code })}
-                  >
-                    {formData.package === pkg.code && (
-                      <div className="selected-indicator">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                      </div>
-                    )}
-                    <img src={pkg.image} alt={pkg.name} className="package-image" />
-                    <div className="package-content">
-                      <h3>{pkg.name}</h3>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          )}
+              <h2 className="section-title">Personal Information</h2>
 
-          {/* Dates & Accommodation Step */}
-          {currentStep === 1 && (
-            <motion.div
-              key="dates"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="booking-step"
-            >
-            <h2 className="section-title">Dates & Accommodation</h2>
-            
-            <div className="row">
-              <div className="col-12 col-md-6">
+              <div className="row">
+                <div className="col-12 col-md-6">
                   <div className="form-group">
-                    <label className="form-label">Number of Adults</label>
-                    {/* <select
+                    <label className="form-label">Select Package</label>
+                    <select
                       className="form-selectz"
-                      value={formData.adults}
-                      onChange={(e) => setFormData({ ...formData, adults: parseInt(e.target.value) })}
+                      value={formData.package}
+                      onChange={(e) => setFormData({ ...formData, package: e.target.value })}
                     >
-                      {[1, 2, 3, 4].map(num => (
-                        <option key={num} value={num}>{num}</option>
+                      <option value="">Select Package</option>
+                      {PACKAGES.map(pkg => (
+                        <option key={pkg.id} value={pkg.code}>{pkg.name}</option>
                       ))}
-                    </select> */}
-                    <input type="number" className="form-input" 
-                      value={formData?.adults}
-                      onChange={(e) => setFormData({ ...formData, adults: e.target.value })}
-                     />
+                    </select>
                   </div>
                 </div>
-                <div className="col-12 col-md-4">
+                <div className="col-12 col-md-6">
                   <div className="form-group">
                     <label className="form-label">Check-in Date</label>
                     <input
@@ -247,7 +300,7 @@ const BookingForm = () => {
                   </div>
                 </div>
               </div>
-              
+
               <h3 className="section-title">Select Accommodation Type</h3>
               <div className="package-grid">
                 {TENT_OPTIONS.map(tent => (
@@ -270,150 +323,300 @@ const BookingForm = () => {
                   </div>
                 ))}
               </div>
+
+              <div className="row">
+                <div className="col-12 col-md-6">
+                  <div className="form-group">
+                    <label className="form-label">Number of Tents</label>
+                    <select
+                      className="form-selectz"
+                      value={formData.numTents}
+                      onChange={(e) => updateNumTents(parseInt(e.target.value))}
+                    >
+                      {[1, 2, 3, 4, 5].map(num => (
+                        <option key={num} value={num}>{num}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div className="tents-section">
+                <h3 className="section-title">Tent Details</h3>
+                {formData.tents.map((tent, index) => (
+                  <div key={index} className="tent-item">
+                    <h4>Tent {index + 1}</h4>
+                    <div className="form-group">
+                      <label className="form-label">Adults (6-60+)</label>
+                      <select
+                        className="form-selectz"
+                        value={tent.adults}
+                        onChange={(e) => updateTentAdults(index, parseInt(e.target.value))}
+                      >
+                        {[1, 2, 3].map(num => (
+                          <option key={num} value={num}>{num}</option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </motion.div>
           )}
 
-          {/* Guest Details Step */}
-          {currentStep === 2 && (
+          {/* Contact Details and Guest Details Step */}
+          {currentStep === 1 && (
             <motion.div
-              key="guests"
+              key="contact-guests"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
               className="booking-step"
             >
-              <h2 className="section-title">Guest Information</h2>
-              
-              <div className="guest-section">
-                <div className="form-grid">
+              <h2 className="section-title">Contact Details</h2>
+
+              <div className="row">
+                <div className="col-12 col-md-6">
                   <div className="form-group">
-                    <label className="form-label">Full Name*</label>
+                    <label className="form-label">First Name*</label>
                     <input
                       type="text"
                       className="form-input"
-                      value={formData.guestData.name}
-                      onChange={(e) => updateGuestData('name', e.target.value)}
-                      required
-                    />
-                  </div>
-                  
-                  <div className="form-group">
-                    <label className="form-label">Date of Birth*</label>
-                    <input
-                      type="date"
-                      className="form-input"
-                      value={formData.guestData.dob}
-                      onChange={(e) => updateGuestData('dob', e.target.value)}
-                      required
-                    />
-                  </div>
-
-                  <div className="form-group">
-                    <label className="form-label">Gender*</label>
-                    <select
-                      className="form-selectz"
-                      value={formData.guestData.gender}
-                      onChange={(e) => updateGuestData('gender', e.target.value)}
-                      required
-                    >
-                      <option value="">Select Gender</option>
-                      <option value="Male">Male</option>
-                      <option value="Female">Female</option>
-                      <option value="Other">Other</option>
-                    </select>
-                  </div>
-
-                </div>
-                <div className="form-grid">
-                  <div className="form-group">
-                    <label className="form-label">Email*</label>
-                    <input
-                      type="email"
-                      className="form-input"
-                      value={formData.guestData.email}
-                      onChange={(e) => updateGuestData('email', e.target.value)}
-                      required
-                    />
-                  </div>
-                  
-                  <div className="form-group">
-                    <label className="form-label">Phone Number*</label>
-                    <input
-                      type="tel"
-                      className="form-input"
-                      value={formData.guestData.phone}
-                      onChange={(e) => updateGuestData('phone', e.target.value)}
-                      required
-                    />
-                  </div>
-
-                </div>
-                <div className="form-grid">
-                  <div className="form-group md:col-span-2">
-                    <label className="form-label">City*</label>
-                    <input
-                      type="text"
-                      className="form-input"
-                      value={formData.guestData.city}
-                      onChange={(e) => updateGuestData('city', e.target.value)}
-                      required
-                    />
-                  </div>
-
-                  <div className="form-group md:col-span-2">
-                    <label className="form-label">state*</label>
-                    <input
-                      type="text"
-                      className="form-input"
-                      value={formData.guestData.state}
-                      onChange={(e) => updateGuestData('state', e.target.value)}
-                      required
-                    />
-                  </div>
-
-                  <div className="form-group md:col-span-2">
-                    <label className="form-label">Address*</label>
-                    <input
-                      type="text"
-                      className="form-input"
-                      value={formData.guestData.address}
-                      onChange={(e) => updateGuestData('address', e.target.value)}
+                      value={formData.contactData.firstName}
+                      onChange={(e) => updateContactData('firstName', e.target.value)}
                       required
                     />
                   </div>
                 </div>
-
-                <div className="form-grid">                  
+                <div className="col-12 col-md-6">
                   <div className="form-group">
-                    <label className="form-label">ID Proof Type*</label>
-                    <select
-                      className="form-selectz"
-                      value={formData.guestData.idProof}
-                      onChange={(e) => updateGuestData('idProof', e.target.value)}
-                      required
-                    >
-                      <option value="">Select ID Proof</option>
-                      <option value="Aadhar">Aadhar Card</option>
-                      <option value="Passport">Passport</option>
-                      <option value="Driving License">Driving License</option>
-                      <option value="Voter ID">Voter ID</option>
-                    </select>
-                  </div>
-                  
-                  <div className="form-group">
-                    <label className="form-label">ID Number*</label>
+                    <label className="form-label">Last Name*</label>
                     <input
                       type="text"
                       className="form-input"
-                      value={formData.guestData.idNumber}
-                      onChange={(e) => updateGuestData('idNumber', e.target.value)}
+                      value={formData.contactData.lastName}
+                      onChange={(e) => updateContactData('lastName', e.target.value)}
                       required
                     />
                   </div>
                 </div>
               </div>
-              
+
+              <div className="row">
+                <div className="col-12 col-md-6">
+                  <div className="form-group">
+                    <label className="form-label">Email*</label>
+                    <input
+                      type="email"
+                      className="form-input"
+                      value={formData.contactData.email}
+                      onChange={(e) => updateContactData('email', e.target.value)}
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="col-12 col-md-6">
+                  <div className="form-group">
+                    <label className="form-label">Phone Number*</label>
+                    <input
+                      type="tel"
+                      className="form-input"
+                      value={formData.contactData.phone}
+                      onChange={(e) => updateContactData('phone', e.target.value)}
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="row">
+                <div className="col-12 col-md-6">
+                  <div className="form-group">
+                    <label className="form-label">Country*</label>
+                    <input
+                      type="text"
+                      className="form-input"
+                      value={formData.contactData.country}
+                      onChange={(e) => updateContactData('country', e.target.value)}
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="col-12 col-md-6">
+                  <div className="form-group">
+                    <label className="form-label">State*</label>
+                    <input
+                      type="text"
+                      className="form-input"
+                      value={formData.contactData.state}
+                      onChange={(e) => updateContactData('state', e.target.value)}
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="row">
+                <div className="col-12 col-md-6">
+                  <div className="form-group">
+                    <label className="form-label">City*</label>
+                    <input
+                      type="text"
+                      className="form-input"
+                      value={formData.contactData.city}
+                      onChange={(e) => updateContactData('city', e.target.value)}
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="col-12 col-md-6">
+                  <div className="form-group">
+                    <label className="form-label">Pincode*</label>
+                    <input
+                      type="text"
+                      className="form-input"
+                      value={formData.contactData.pincode}
+                      onChange={(e) => updateContactData('pincode', e.target.value)}
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="form-group">
+                <label className="form-label">Pickup/Drop-off Point</label>
+                <select
+                  className="form-selectz"
+                  value={formData.contactData.pickup}
+                  onChange={(e) => updateContactData('pickup', e.target.value)}
+                >
+                  <option value="">Select Pickup Point</option>
+                  <option value="08:15 AM From Railway Station, Bhuj">08:15 AM From Railway Station, Bhuj</option>
+                  <option value="10:00 AM From Railway Station, Bhuj and Airport, Bhuj">10:00 AM From Railway Station, Bhuj and Airport, Bhuj</option>
+                  <option value="01:30 PM From Railway Station, Bhuj">01:30 PM From Railway Station, Bhuj</option>
+                  <option value="03:30 PM From Airport, Bhuj">03:30 PM From Airport, Bhuj</option>
+                  <option value="No Pickup">No Pickup</option>
+                </select>
+              </div>
+
+              <h3 className="section-title">Guest Details</h3>
+              <div className="guest-cards-container">
+                {formData.travelers.map((traveler, index) => {
+                  // Calculate guest number within the current tent
+                  const tentGuestNumber = formData.travelers
+                    .slice(0, index + 1)
+                    .filter(t => t.tent === traveler.tent)
+                    .length;
+  
+                  return (
+                    <div key={index} className="guest-card">
+                      <div className="guest-card-header">
+                        <span className="tent-badge">Tent {traveler.tent}: </span>
+                        <span className="guest-number">Guest {tentGuestNumber}</span>
+                      </div>
+                    
+                    <div className="guest-card-body">
+                      <div className="row">
+                        <div className="col-12 col-md-6">
+                          <div className="form-group">
+                            <label className="form-label">Traveler Name*</label>
+                            <input
+                              type="text"
+                              className="form-input"
+                              value={traveler.name}
+                              onChange={(e) => updateTraveler(index, 'name', e.target.value)}
+                              placeholder="Enter full name"
+                              required
+                            />
+                          </div>
+                        </div>
+                        <div className="col-12 col-md-6">
+                          <div className="form-group">
+                            <label className="form-label">Age*</label>
+                            <input
+                              type="number"
+                              className="form-input"
+                              value={traveler.age}
+                              onChange={(e) => updateTraveler(index, 'age', e.target.value)}
+                              placeholder="Age"
+                              min="1"
+                              max="120"
+                              required
+                            />
+                          </div>
+                        </div>
+                      </div>
+  
+                      <div className="row">
+                        <div className="col-12 col-md-4">
+                          <div className="form-group">
+                            <label className="form-label">Gender*</label>
+                            <select
+                              className="form-selectz"
+                              value={traveler.gender}
+                              onChange={(e) => updateTraveler(index, 'gender', e.target.value)}
+                              required
+                            >
+                              <option value="">Select</option>
+                              <option value="Male">Male</option>
+                              <option value="Female">Female</option>
+                              <option value="Other">Other</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div className="col-12 col-md-4">
+                          <div className="form-group">
+                            <label className="form-label">Phone Number*</label>
+                            <input
+                              type="tel"
+                              className="form-input"
+                              value={traveler.number}
+                              onChange={(e) => updateTraveler(index, 'number', e.target.value)}
+                              placeholder="Phone number"
+                              required
+                            />
+                          </div>
+                        </div>
+                        <div className="col-12 col-md-4">
+                          <div className="form-group">
+                            <label className="form-label">Food Type*</label>
+                            <select
+                              className="form-selectz"
+                              value={traveler.foodType}
+                              onChange={(e) => updateTraveler(index, 'foodType', e.target.value)}
+                              required
+                            >
+                              <option value="">Select</option>
+                              <option value="Vegetarian">Vegetarian</option>
+                              <option value="Non-Vegetarian">Non-Vegetarian</option>
+                              <option value="Jain">Jain</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+  
+                      <div className="row">
+                        <div className="col-12">
+                          <div className="form-group">
+                            <label className="form-label">Country*</label>
+                            <input
+                              type="text"
+                              className="form-input"
+                              value={traveler.country}
+                              onChange={(e) => updateTraveler(index, 'country', e.target.value)}
+                              placeholder="Country"
+                              required
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )
+})}
+              </div>
+
               <div className="form-group">
                 <label className="form-label">Special Requests (Optional)</label>
                 <textarea
@@ -427,7 +630,7 @@ const BookingForm = () => {
           )}
 
           {/* Review Step */}
-          {currentStep === 3 && (
+          {currentStep === 2 && (
             <motion.div
               key="review"
               initial={{ opacity: 0, y: 20 }}
@@ -437,11 +640,11 @@ const BookingForm = () => {
               className="booking-step"
             >
               <h2 className="section-title">Review Your Booking</h2>
-              
+
               <div className="review-grid">
                 <div>
                   <h3 className="review-title">Booking Summary</h3>
-                  
+
                   <div className="space-y-4">
                     <div className="review-item">
                       <span className="review-label">Package:</span>
@@ -449,70 +652,153 @@ const BookingForm = () => {
                         {PACKAGES.find(p => p.code === formData.package)?.name || "Not selected"}
                       </span>
                     </div>
-                    
+
                     <div className="review-item">
                       <span className="review-label">Check-in Date:</span>
                       <span className="review-value">
                         {formData.checkInDate ? new Date(formData.checkInDate).toLocaleDateString() : "Not selected"}
                       </span>
                     </div>
-                    
+
                     <div className="review-item">
                       <span className="review-label">Accommodation:</span>
                       <span className="review-value">
                         {TENT_OPTIONS.find(t => t.code === formData.tentType)?.name || "Not selected"}
                       </span>
                     </div>
-                    
+
                     <div className="review-item">
                       <span className="review-label">Guests:</span>
                       <span className="review-value">
-                        {formData.adults} Adult{formData.adults !== '1' ? 's' : ''}
-                        {formData.children > 0 ? `, ${formData.children} Child${formData.children !== 1 ? 'ren' : ''}` : ''}
+                        {formData.numTents} Tent{formData.numTents !== 1 ? 's' : ''} - {formData.tents.reduce((sum, tent) => sum + tent.adults, 0)} Adult{formData.tents.reduce((sum, tent) => sum + tent.adults, 0) !== 1 ? 's' : ''}
                       </span>
                     </div>
-                    
+
                     <div className="review-item pt-4 border-t">
                       <span className="review-label">Total:</span>
                       <span className="review-total">Total will be called from API</span>
                     </div>
                   </div>
                 </div>
-                
+
                 <div>
-                  <h3 className="review-title">Guest Details</h3>
-                  
+                  <h3 className="review-title">Contact Details</h3>
+
                   <div className="guest-section">
                     <div className="space-y-1">
                       <div className="review-item">
                         <span className="review-label">Name:</span>
-                        <span className="review-value">{formData.guestData.name || "-"}</span>
-                      </div>
-                      <div className="review-item">
-                        <span className="review-label">Gender:</span>
-                        <span className="review-value">{formData.guestData.gender || "-"}</span>
-                      </div>
-                      <div className="review-item">
-                        <span className="review-label">Phone:</span>
-                        <span className="review-value">{formData.guestData.phone || "-"}</span>
+                        <span className="review-value">{`${formData.contactData.firstName} ${formData.contactData.lastName}` || "-"}</span>
                       </div>
                       <div className="review-item">
                         <span className="review-label">Email:</span>
-                        <span className="review-value">{formData.guestData.email || "-"}</span>
+                        <span className="review-value">{formData.contactData.email || "-"}</span>
+                      </div>
+                      <div className="review-item">
+                        <span className="review-label">Phone:</span>
+                        <span className="review-value">{formData.contactData.phone || "-"}</span>
                       </div>
                       <div className="review-item">
                         <span className="review-label">Address:</span>
-                        <span className="review-value">{formData.guestData.address || "-"}</span>
+                        <span className="review-value">{`${formData.contactData.city}, ${formData.contactData.state}, ${formData.contactData.country} - ${formData.contactData.pincode}` || "-"}</span>
                       </div>
                       <div className="review-item">
-                        <span className="review-label">ID Proof:</span>
-                        <span className="review-value">
-                          {formData.guestData.idProof ? `${formData.guestData.idProof} (${formData.guestData.idNumber})` : "-"}
-                        </span>
+                        <span className="review-label">Pickup:</span>
+                        <span className="review-value">{formData.contactData.pickup || "-"}</span>
                       </div>
                     </div>
                   </div>
-                  
+
+                  <div className="guest-section">
+                    <h3 className="review-title">Guest Information</h3>
+                    <div className="guest-cards-container">
+                      {formData.travelers.map((traveler, index) => {
+                        // Calculate guest number within the current tent
+                        const tentGuestNumber = formData.travelers
+                          .slice(0, index + 1)
+                          .filter(t => t.tent === traveler.tent)
+                          .length;
+                        
+                        return (
+                          <div key={index} className="guest-card review-card">
+                            <div className="guest-card-header">
+                              <span className="tent-badge">
+                                Tent {traveler.tent}:{" "}
+                              </span>
+                              <span className="guest-number">
+                                Guest {tentGuestNumber}
+                              </span>
+                            </div>
+
+                            <div className="guest-card-body">
+                              <div className="row">
+                                <div className="col-12 col-md-6">
+                                  <div className="review-item">
+                                    <span className="review-label">Name:</span>
+                                    <span className="review-value">
+                                      {traveler.name || "-"}
+                                    </span>
+                                  </div>
+                                </div>
+                                <div className="col-12 col-md-6">
+                                  <div className="review-item">
+                                    <span className="review-label">Age:</span>
+                                    <span className="review-value">
+                                      {traveler.age || "-"}
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div className="row">
+                                <div className="col-12 col-md-6">
+                                  <div className="review-item">
+                                    <span className="review-label">
+                                      Gender:
+                                    </span>
+                                    <span className="review-value">
+                                      {traveler.gender || "-"}
+                                    </span>
+                                  </div>
+                                </div>
+                                <div className="col-12 col-md-6">
+                                  <div className="review-item">
+                                    <span className="review-label">Phone:</span>
+                                    <span className="review-value">
+                                      {traveler.number || "-"}
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div className="row">
+                                <div className="col-12 col-md-6">
+                                  <div className="review-item">
+                                    <span className="review-label">
+                                      Food Type:
+                                    </span>
+                                    <span className="review-value">
+                                      {traveler.foodType || "-"}
+                                    </span>
+                                  </div>
+                                </div>
+                                <div className="col-12 col-md-6">
+                                  <div className="review-item">
+                                    <span className="review-label">
+                                      Country:
+                                    </span>
+                                    <span className="review-value">
+                                      {traveler.country || "-"}
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        );})}
+                    </div>
+                  </div>
+
                   {formData.specialRequests && (
                     <div className="guest-section">
                       <h4>Special Requests</h4>
@@ -521,9 +807,15 @@ const BookingForm = () => {
                   )}
                 </div>
               </div>
-              
+
               <div className="terms-checkbox">
-                <input type="checkbox" id="terms" required />
+                <input
+                  type="checkbox"
+                  id="terms"
+                  checked={formData.termsAccepted}
+                  onChange={(e) => setFormData(prev => ({ ...prev, termsAccepted: e.target.checked }))}
+                  required
+                />
                 <label htmlFor="terms" className="terms-label">
                   I agree to the Terms & Conditions and Cancellation Policy.
                 </label>
@@ -536,7 +828,7 @@ const BookingForm = () => {
       {/* Navigation Buttons */}
       <div className="navigation">
         {currentStep > 0 && (
-          <button 
+          <button
             className="btn btn-outline"
             onClick={prevStep}
             type="button"
@@ -545,8 +837,8 @@ const BookingForm = () => {
           </button>
         )}
         
-        {currentStep < 3 ? (
-          <button 
+        {currentStep < 2 ? (
+          <button
             className="btn btn-primary"
             onClick={nextStep}
             disabled={!validateStep(currentStep)}
@@ -555,9 +847,10 @@ const BookingForm = () => {
             Continue
           </button>
         ) : (
-          <button 
+          <button
             className="btn btn-primary"
             onClick={() => alert("Proceeding to payment...")}
+            disabled={!validateStep(currentStep)}
             type="button"
           >
             Confirm & Pay
