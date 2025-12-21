@@ -1,68 +1,100 @@
 "use client";
 
+import Link from "next/link";
 import { FaPhone, FaEnvelopeOpen } from "react-icons/fa6";
 import { FaFacebookF, FaYoutube, FaInstagram } from "react-icons/fa";
 
 export const Footer = () => {
+    const pageLinks = [
+        { href: "/", label: "Home" },
+        { href: "/accomodation", label: "Accommodation" },
+        { href: "/activities", label: "Activities" },
+        { href: "/attractions", label: "Attractions" },
+        { href: "/booking", label: "Booking" },
+        { href: "/contact-us", label: "Contact Us" },
+        { href: "/gallery", label: "Gallery" },
+        { href: "/packages", label: "Packages" },
+        { href: "/special-dates", label: "Special Dates" }
+    ];
+
+    const quickLinks = [
+        { href: "/booking", label: "Book Now" },
+        { href: "/packages", label: "Tour Packages" },
+        { href: "/gallery", label: "Photo Gallery" },
+        { href: "/contact-us", label: "Enquiry" },
+        { href: "/accomodation", label: "Room Types" },
+        { href: "/activities", label: "Activities" },
+        { href: "/attractions", label: "Nearby Attractions" }
+    ];
+
     return (
-        <footer
-            className="footer">
-            <div className="footer-content">
-                {/* Address Section */}
-                <div className="footer-section">
-                    <h5 className="footer-heading">Address</h5>
-                    <div className="footer-info">
-                        <p className="footer-text">
-                            <FaPhone className="footer-icon" /> +919521265253
-                        </p>
-                        <p className="footer-text">
-                            <FaEnvelopeOpen className="footer-icon" /> info@therannutsav.com
-                        </p>
+        <footer className="footer">
+            <div className="container">
+                <div className="row">
+                    {/* Page Links Column */}
+                    <div className="col-lg-3 col-md-6 mb-4">
+                        <h5 className="footer-heading">Pages</h5>
+                        <div className="footer-links">
+                            {pageLinks.map((link, index) => (
+                                <Link key={index} href={link.href} className="footer-link">
+                                    {link.label}
+                                </Link>
+                            ))}
+                        </div>
                     </div>
-                    <div className="footer-social">
-                        <a className="social-link" href="#">
-                            <FaFacebookF />
-                        </a>
-                        <a className="social-link" href="#">
-                            <FaYoutube />
-                        </a>
-                        <a className="social-link" href="#">
-                            <FaInstagram />
-                        </a>
+
+                    {/* Quick Links Column */}
+                    <div className="col-lg-3 col-md-6 mb-4">
+                        <h5 className="footer-heading">Quick Links</h5>
+                        <div className="footer-links">
+                            {quickLinks.map((link, index) => (
+                                <Link key={index} href={link.href} className="footer-link">
+                                    {link.label}
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Contact Info Column */}
+                    <div className="col-lg-3 col-md-6 mb-4">
+                        <h5 className="footer-heading">Contact Info</h5>
+                        <div className="footer-info">
+                            <p className="footer-text">
+                                <FaPhone className="footer-icon" />
+                                <a href="tel:+919521265253" className="footer-link">+919521265253</a>
+                            </p>
+                            <p className="footer-text">
+                                <FaEnvelopeOpen className="footer-icon" />
+                                <a href="mailto:info@therannutsav.com" className="footer-link">info@therannutsav.com</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Social Links Column */}
+                    <div className="col-lg-3 col-md-6 mb-4">
+                        <h5 className="footer-heading">Follow Us</h5>
+                        <div className="footer-social">
+                            <a className="social-link" href="#" aria-label="Facebook">
+                                <FaFacebookF />
+                            </a>
+                            <a className="social-link" href="#" aria-label="YouTube">
+                                <FaYoutube />
+                            </a>
+                            <a className="social-link" href="#" aria-label="Instagram">
+                                <FaInstagram />
+                            </a>
+                        </div>
                     </div>
                 </div>
-
-                {/* Quick Links (Optional) */}
-                {/* <div className="footer-section">
-                    <h5 className="footer-heading">Quick Links</h5>
-                    <div className="footer-links">
-                        {["About Us", "Contact Us", "Our Services", "Terms & Condition", "Support"].map((link, index) => (
-                            <a key={index} className="footer-link" href="#">{link}</a>
-                        ))}
-                    </div>
-                </div> */}
-
-                {/* Newsletter (Optional) */}
-                {/* <div className="footer-section">
-                    <h5 className="footer-heading">Newsletter</h5>
-                    <p className="footer-text">Stay updated with our latest news and offers.</p>
-                    <div className="newsletter-form">
-                        <input className="newsletter-input" type="email" placeholder="Your email" />
-                        <button className="newsletter-button">Sign Up</button>
-                    </div>
-                </div> */}
             </div>
 
             {/* Copyright Section */}
             <div className="footer-copyright">
-                <div className="copyright-text">
-                    &copy; <a className="copyright-link" href="#">Your Site Name</a>, All Rights Reserved.
+                <div className="container">
+                    <div className="copyright-text">
+                        &copy; {new Date().getFullYear()} Rann Utsav Tent City Dhordo. All Rights Reserved.
+                    </div>
                 </div>
-                {/* <div className="copyright-text">
-                    Designed By <a className="copyright-link" href="https://htmlcodex.com">HTML Codex</a>
-                    <br />
-                    Distributed By: <a className="copyright-link" href="https://themewagon.com">ThemeWagon</a>
-                </div> */}
             </div>
         </footer>
     );

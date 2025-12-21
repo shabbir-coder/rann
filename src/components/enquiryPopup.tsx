@@ -52,10 +52,10 @@ const EnquiryPopup = forwardRef((props, ref) => {
         modalInstance = new Modal(element);
         modalRef.current = modalInstance;
         
-        // Auto-show after 2 seconds
+        // Auto-show after 20 seconds
         const timer = setTimeout(() => {
           modalRef.current?.show();
-        }, 2000);
+        }, 20000);
 
         element.addEventListener("hidden.bs.modal", () => {
           document.body.classList.remove("modal-open");

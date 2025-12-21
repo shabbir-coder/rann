@@ -1,0 +1,1175 @@
+{
+  "packages": [
+    {
+      "id": 1,
+      "name": "1 Night / 2 days",
+      "duration": {
+        "nights": 1,
+        "days": 2
+      },
+      "places": ["Dhordo"],
+      "itinerary": "Lunch, Activities, Sunset point, Cultural Shows, Yoga",
+      "price": {
+        "startingFrom": "₹5,500",
+        "currency": "INR",
+        "perPerson": true
+      },
+      "image": "/img/pr1.jpg",
+      "description": "Experience the magic of Rann Utsav with a perfect 1-night stay",
+      "highlights": [
+        "Welcome lunch and check-in",
+        "Recreational activities",
+        "Sunset point visit",
+        "Cultural performances",
+        "Yoga sessions"
+      ],
+      "includes": [
+        "Accommodation",
+        "Meals (Lunch, Dinner, Breakfast)",
+        "Cultural activities",
+        "Sunset/Sunrise point visits"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "2 Night / 3 days",
+      "duration": {
+        "nights": 2,
+        "days": 3
+      },
+      "places": ["Dhordo", "Kala Dungar"],
+      "itinerary": "All of Day 1 and Kala Dungar and sightseeing",
+      "price": {
+        "startingFrom": "₹11,000",
+        "currency": "INR",
+        "perPerson": true
+      },
+      "image": "/img/pr3.jpg",
+      "description": "Explore the white desert and Kala Dungar in this 2-night adventure",
+      "highlights": [
+        "All Day 1 activities",
+        "Kala Dungar visit",
+        "Traditional village exploration",
+        "Sunrise and sunset experiences"
+      ],
+      "includes": [
+        "Accommodation",
+        "Meals (All meals)",
+        "Cultural activities",
+        "Kala Dungar excursion",
+        "Transportation within package"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "3 Night / 4 days",
+      "duration": {
+        "nights": 3,
+        "days": 4
+      },
+      "places": ["Dhordo", "Kala Dungar", "Dholavira"],
+      "itinerary": "All of Day 1, 2 and Dholavira (Road to heaven)",
+      "price": {
+        "startingFrom": "₹14,500",
+        "currency": "INR",
+        "perPerson": true
+      },
+      "image": "/img/pr7.jpg",
+      "description": "Comprehensive tour including ancient Dholavira civilization",
+      "highlights": [
+        "All previous package activities",
+        "Dholavira ancient city visit",
+        "Road to Heaven scenic route",
+        "Museum exploration"
+      ] ,
+      "includes": [
+        "Accommodation",
+        "Meals (All meals)",
+        "Cultural activities",
+        "Dholavira excursion",
+        "Museum entry",
+        "Transportation"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "4 Night / 5 days",
+      "duration": {
+        "nights": 4,
+        "days": 5
+      },
+      "places": ["Dhordo", "Kala Dungar", "Dholavira", "Nirona Village"],
+      "itinerary": "All of Day 1, 2, 3 and Visit Nirona Village",
+      "price": {
+        "startingFrom": "₹19,000",
+        "currency": "INR",
+        "perPerson": true
+      },
+      "image": "/img/pr5.jpg",
+      "description": "Complete Rann Utsav experience with craft village visit",
+      "highlights": [
+        "All previous package activities",
+        "Nirona craft village",
+        "Rogan art demonstration",
+        "Traditional crafts experience"
+      ],
+      "includes": [
+        "Accommodation",
+        "Meals (All meals)",
+        "Cultural activities",
+        "All excursions",
+        "Craft village visit",
+        "Transportation"
+      ]
+    }
+  ],
+  "accommodations": {
+    "periods": [
+      {
+        "id": "nov-feb-mar-excluding-full-moon",
+        "title": "Tariff for Nov 2024, Feb & March 2025 (Excluding Full Moon)",
+        "validity": {
+          "months": ["November", "February", "March"],
+          "year": 2025,
+          "excludeFullMoon": true
+        },
+        "roomTypes": [
+          {
+            "id": "super-premium-tent",
+            "name": "Super Premium Tent",
+            "description": "Luxury tent accommodation with premium amenities",
+            "capacity": "2 adults + 1 child",
+            "amenities": ["Attached bathroom", "AC", "Premium bedding", "Room service"],
+            "pricing": {
+              "currency": "INR",
+              "basis": "per person on twin sharing",
+              "nights": [
+                { "count": 1, "rate": 9500, "extraMattress": 5000 },
+                { "count": 2, "rate": 18000, "extraMattress": 10000 },
+                { "count": 3, "rate": 25500, "extraMattress": 15000 },
+                { "count": 4, "rate": 32000, "extraMattress": 20000 }
+              ]
+            }
+          },
+          {
+            "id": "premium-tent",
+            "name": "Premium Tent",
+            "description": "Comfortable tent with modern facilities",
+            "capacity": "2 adults + 1 child",
+            "amenities": ["Attached bathroom", "AC", "Comfortable bedding"],
+            "pricing": {
+              "currency": "INR",
+              "basis": "per person on twin sharing",
+              "nights": [
+                { "count": 1, "rate": 8500, "extraMattress": 5000 },
+                { "count": 2, "rate": 16000, "extraMattress": 10000 },
+                { "count": 3, "rate": 23000, "extraMattress": 15000 },
+                { "count": 4, "rate": 29500, "extraMattress": 20000 }
+              ]
+            }
+          },
+          {
+            "id": "deluxe-ac-swiss-cottage",
+            "name": "Deluxe AC Swiss Cottage",
+            "description": "Cottage accommodation with AC and modern amenities",
+            "capacity": "2 adults + 1 child",
+            "amenities": ["AC", "Attached bathroom", "Modern furnishings"],
+            "pricing": {
+              "currency": "INR",
+              "basis": "per person on twin sharing",
+              "nights": [
+                { "count": 1, "rate": 7500, "extraMattress": 5000 },
+                { "count": 2, "rate": 14000, "extraMattress": 10000 },
+                { "count": 3, "rate": 20000, "extraMattress": 15000 },
+                { "count": 4, "rate": 25500, "extraMattress": 20000 }
+              ]
+            }
+          },
+          {
+            "id": "non-ac-swiss-cottage",
+            "name": "Non AC Swiss Cottage",
+            "description": "Traditional cottage with basic amenities",
+            "capacity": "2 adults + 1 child",
+            "amenities": ["Attached bathroom", "Traditional decor"],
+            "pricing": {
+              "currency": "INR",
+              "basis": "per person on twin sharing",
+              "nights": [
+                { "count": 1, "rate": 5500, "extraMattress": 4000 },
+                { "count": 2, "rate": 11000, "extraMattress": 8000 },
+                { "count": 3, "rate": 14500, "extraMattress": 12000 },
+                { "count": 4, "rate": 19000, "extraMattress": 16000 }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "nov-feb-mar-full-moon",
+        "title": "Tariff for Nov 2024, Feb & March 2025 (Full Moon) & Dec & Jan (Excluding Full Moon & Christmas Period)",
+        "validity": {
+          "months": ["November", "February", "March", "December", "January"],
+          "year": 2025,
+          "includeFullMoon": true,
+          "excludeChristmas": true
+        },
+        "roomTypes": [
+          {
+            "id": "super-premium-tent",
+            "name": "Super Premium Tent",
+            "description": "Luxury tent accommodation with premium amenities",
+            "capacity": "2 adults + 1 child",
+            "amenities": ["Attached bathroom", "AC", "Premium bedding", "Room service"],
+            "pricing": {
+              "currency": "INR",
+              "basis": "per person on twin sharing",
+              "nights": [
+                { "count": 1, "rate": 11500, "extraMattress": 5500 },
+                { "count": 2, "rate": 21500, "extraMattress": 11000 },
+                { "count": 3, "rate": 31000, "extraMattress": 16500 },
+                { "count": 4, "rate": 41000, "extraMattress": 22000 }
+              ]
+            }
+          },
+          {
+            "id": "premium-tent",
+            "name": "Premium Tent",
+            "description": "Comfortable tent with modern facilities",
+            "capacity": "2 adults + 1 child",
+            "amenities": ["Attached bathroom", "AC", "Comfortable bedding"],
+            "pricing": {
+              "currency": "INR",
+              "basis": "per person on twin sharing",
+              "nights": [
+                { "count": 1, "rate": 10500, "extraMattress": 5500 },
+                { "count": 2, "rate": 19500, "extraMattress": 11000 },
+                { "count": 3, "rate": 28500, "extraMattress": 16500 },
+                { "count": 4, "rate": 37500, "extraMattress": 22000 }
+              ]
+            }
+          },
+          {
+            "id": "deluxe-ac-swiss-cottage",
+            "name": "Deluxe AC Swiss Cottage",
+            "description": "Cottage accommodation with AC and modern amenities",
+            "capacity": "2 adults + 1 child",
+            "amenities": ["AC", "Attached bathroom", "Modern furnishings"],
+            "pricing": {
+              "currency": "INR",
+              "basis": "per person on twin sharing",
+              "nights": [
+                { "count": 1, "rate": 9000, "extraMattress": 5500 },
+                { "count": 2, "rate": 16500, "extraMattress": 11000 },
+                { "count": 3, "rate": 23000, "extraMattress": 16500 },
+                { "count": 4, "rate": 30000, "extraMattress": 22000 }
+              ]
+            }
+          },
+          {
+            "id": "non-ac-swiss-cottage",
+            "name": "Non AC Swiss Cottage",
+            "description": "Traditional cottage with basic amenities",
+            "capacity": "2 adults + 1 child",
+            "amenities": ["Attached bathroom", "Traditional decor"],
+            "pricing": {
+              "currency": "INR",
+              "basis": "per person on twin sharing",
+              "nights": [
+                { "count": 1, "rate": 7500, "extraMattress": 4500 },
+                { "count": 2, "rate": 13500, "extraMattress": 9000 },
+                { "count": 3, "rate": 17500, "extraMattress": 13500 },
+                { "count": 4, "rate": 23000, "extraMattress": 18000 }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "dec-jan-christmas-full-moon",
+        "title": "Tariff for Dec 2024 & Jan 2025 (20th Dec 2024 - 31st Dec 2024) & Full Moon",
+        "validity": {
+          "months": ["December", "January"],
+          "year": 2025,
+          "includeChristmas": true,
+          "includeFullMoon": true,
+          "christmasPeriod": "20th Dec 2024 - 31st Dec 2024"
+        },
+        "roomTypes": [
+          {
+            "id": "super-premium-tent",
+            "name": "Super Premium Tent",
+            "description": "Luxury tent accommodation with premium amenities",
+            "capacity": "2 adults + 1 child",
+            "amenities": ["Attached bathroom", "AC", "Premium bedding", "Room service"],
+            "pricing": {
+              "currency": "INR",
+              "basis": "per person on twin sharing",
+              "nights": [
+                { "count": 1, "rate": 13000, "extraMattress": 5500 },
+                { "count": 2, "rate": 23500, "extraMattress": 11000 },
+                { "count": 3, "rate": 34000, "extraMattress": 16500 },
+                { "count": 4, "rate": 44000, "extraMattress": 22000 }
+              ]
+            }
+          },
+          {
+            "id": "premium-tent",
+            "name": "Premium Tent",
+            "description": "Comfortable tent with modern facilities",
+            "capacity": "2 adults + 1 child",
+            "amenities": ["Attached bathroom", "AC", "Comfortable bedding"],
+            "pricing": {
+              "currency": "INR",
+              "basis": "per person on twin sharing",
+              "nights": [
+                { "count": 1, "rate": 12000, "extraMattress": 5500 },
+                { "count": 2, "rate": 21500, "extraMattress": 11000 },
+                { "count": 3, "rate": 31000, "extraMattress": 16500 },
+                { "count": 4, "rate": 40000, "extraMattress": 22000 }
+              ]
+            }
+          },
+          {
+            "id": "deluxe-ac-swiss-cottage",
+            "name": "Deluxe AC Swiss Cottage",
+            "description": "Cottage accommodation with AC and modern amenities",
+            "capacity": "2 adults + 1 child",
+            "amenities": ["AC", "Attached bathroom", "Modern furnishings"],
+            "pricing": {
+              "currency": "INR",
+              "basis": "per person on twin sharing",
+              "nights": [
+                { "count": 1, "rate": 10500, "extraMattress": 5500 },
+                { "count": 2, "rate": 18500, "extraMattress": 11000 },
+                { "count": 3, "rate": 25500, "extraMattress": 16500 },
+                { "count": 4, "rate": 34500, "extraMattress": 22000 }
+              ]
+            }
+          },
+          {
+            "id": "non-ac-swiss-cottage",
+            "name": "Non AC Swiss Cottage",
+            "description": "Traditional cottage with basic amenities",
+            "capacity": "2 adults + 1 child",
+            "amenities": ["Attached bathroom", "Traditional decor"],
+            "pricing": {
+              "currency": "INR",
+              "basis": "per person on twin sharing",
+              "nights": [
+                { "count": 1, "rate": 8500, "extraMattress": 4500 },
+                { "count": 2, "rate": 15000, "extraMattress": 9000 },
+                { "count": 3, "rate": 21500, "extraMattress": 13500 },
+                { "count": 4, "rate": 29500, "extraMattress": 18000 }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "suites-all-days",
+        "title": "All Days",
+        "validity": {
+          "allYear": true,
+          "year": 2025
+        },
+        "roomTypes": [
+          {
+            "id": "darbar-suite",
+            "name": "Darbar Suite (4 Pax)",
+            "description": "Luxury suite for 4 people with royal amenities",
+            "capacity": "4 adults",
+            "amenities": ["Multiple rooms", "AC", "Premium furnishings", "Private lounge", "Butler service"],
+            "pricing": {
+              "currency": "INR",
+              "basis": "per suite",
+              "nights": [
+                { "count": 1, "rate": 55000, "extraMattress": 15000 },
+                { "count": 2, "rate": 105000, "extraMattress": 22500 },
+                { "count": 3, "rate": 141000, "extraMattress": 30000 },
+                { "count": 4, "rate": 176000, "extraMattress": 37500 }
+              ]
+            }
+          },
+          {
+            "id": "rajwadi-suite",
+            "name": "Rajwadi Suite (2 Pax)",
+            "description": "Elegant suite for 2 people with traditional royal decor",
+            "capacity": "2 adults",
+            "amenities": ["AC", "Traditional decor", "Private balcony", "Room service"],
+            "pricing": {
+              "currency": "INR",
+              "basis": "per suite",
+              "nights": [
+                { "count": 1, "rate": 35000, "extraMattress": 10000 },
+                { "count": 2, "rate": 65000, "extraMattress": 15000 },
+                { "count": 3, "rate": 90000, "extraMattress": 22500 },
+                { "count": 4, "rate": 122500, "extraMattress": 30000 }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "itineraries": [
+    {
+      "packageId": 1,
+      "packageName": "1 Night / 2 days",
+      "days": [
+        {
+          "day": "Day 1",
+          "title": "Arrival and Check-in",
+          "schedule": [
+            {
+              "type": "transfer",
+              "time": "08:15 AM to 03:30 PM",
+              "description": "Transfer from Bhuj Railway Station/Airport to Rann Utsav - The Tent City, Dhordo",
+              "notes": [
+                "Fixed departure timings",
+                "Complimentary transfers only at listed times",
+                "Private transfers available at additional cost",
+                "Early arrivals accommodated based on availability",
+                "85 km from Bhuj, ~1.5 hours travel"
+              ]
+            },
+            {
+              "type": "checkin",
+              "time": "12:30 PM",
+              "description": "Check-in time"
+            },
+            {
+              "type": "activity",
+              "time": "12:30 PM Onwards",
+              "description": "Warm welcome followed by check-in"
+            },
+            {
+              "type": "meal",
+              "time": "12:30 PM to 02:30 PM",
+              "description": "Delightful lunch at the designated dining area"
+            },
+            {
+              "type": "activity",
+              "time": "02:30 PM to 04:30 PM",
+              "description": "Recreational activities"
+            },
+            {
+              "type": "meal",
+              "time": "04:00 PM to 05:00 PM",
+              "description": "Refreshing Hi-Tea"
+            },
+            {
+              "type": "activity",
+              "time": "05:00 PM to 07:00 PM",
+              "description": "Sunset Point visit (bus or camel cart transport)"
+            },
+            {
+              "type": "transfer",
+              "time": "07:00 PM to 07:30 PM",
+              "description": "Return to Rann Utsav - The Tent City, Dhordo"
+            },
+            {
+              "type": "meal",
+              "time": "07:30 PM to 10:00 PM",
+              "description": "Lavish dinner at the dining facility"
+            },
+            {
+              "type": "activity",
+              "time": "09:00 PM to 10:30 PM",
+              "description": "Cultural performances at the Cultural Activity Area"
+            }
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Departure Day",
+          "schedule": [
+            {
+              "type": "meal",
+              "time": "06:00 AM to 06:30 AM",
+              "description": "Morning tea"
+            },
+            {
+              "type": "activity",
+              "time": "06:30 AM to 07:30 AM",
+              "description": "Yoga session at the designated space"
+            },
+            {
+              "type": "meal",
+              "time": "07:30 AM to 09:30 AM",
+              "description": "Wholesome breakfast"
+            },
+            {
+              "type": "checkout",
+              "time": "09:30 AM",
+              "description": "Check-out with beautiful memories"
+            },
+            {
+              "type": "activity",
+              "time": "11:30 AM to 02:00 PM",
+              "description": "Complimentary Smritivan Earthquake Museum visit in Bhuj (2 hours, closed Mondays)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packageId": 2,
+      "packageName": "2 Night / 3 days",
+      "days": [
+        {
+          "day": "Day 1",
+          "title": "Arrival and Check-in",
+          "schedule": [
+            {
+              "type": "transfer",
+              "time": "08:15 AM to 03:30 PM",
+              "description": "Transfer from Bhuj to Rann Utsav - The Tent City, Dhordo"
+            },
+            {
+              "type": "checkin",
+              "time": "12:30 PM",
+              "description": "Check-in time"
+            },
+            {
+              "type": "activity",
+              "time": "12:30 PM Onwards",
+              "description": "Warm welcome and check-in"
+            },
+            {
+              "type": "meal",
+              "time": "12:30 PM to 02:30 PM",
+              "description": "Lunch"
+            },
+            {
+              "type": "activity",
+              "time": "02:30 PM to 04:30 PM",
+              "description": "Recreational activities"
+            },
+            {
+              "type": "meal",
+              "time": "04:00 PM to 05:00 PM",
+              "description": "Hi-Tea"
+            },
+            {
+              "type": "activity",
+              "time": "05:00 PM to 07:00 PM",
+              "description": "Sunset Point visit"
+            },
+            {
+              "type": "transfer",
+              "time": "07:00 PM to 07:30 PM",
+              "description": "Return to camp"
+            },
+            {
+              "type": "meal",
+              "time": "07:30 PM to 10:00 PM",
+              "description": "Dinner"
+            },
+            {
+              "type": "activity",
+              "time": "09:00 PM to 10:30 PM",
+              "description": "Cultural performances"
+            }
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Kala Dungar Excursion",
+          "schedule": [
+            {
+              "type": "meal",
+              "time": "06:00 AM to 06:30 AM",
+              "description": "Morning tea"
+            },
+            {
+              "type": "activity",
+              "time": "06:30 AM to 07:30 AM",
+              "description": "Yoga session"
+            },
+            {
+              "type": "activity",
+              "time": "06:30 AM to 07:00 AM",
+              "description": "Sunrise Point visit"
+            },
+            {
+              "type": "meal",
+              "time": "07:30 AM to 10:00 AM",
+              "description": "Breakfast"
+            },
+            {
+              "type": "activity",
+              "time": "10:00 AM to 12:30 PM",
+              "description": "Leisure activities"
+            },
+            {
+              "type": "meal",
+              "time": "12:30 PM to 02:30 PM",
+              "description": "Lunch"
+            },
+            {
+              "type": "excursion",
+              "time": "03:00 PM to 07:30 PM",
+              "description": "Complimentary trip to Kala Dungar (Black Hill) - highest peak in Kutch",
+              "highlights": [
+                "En route visit to Gandhi Nu Gaam village",
+                "Traditional crafts exploration",
+                "Refreshments and tea provided"
+              ]
+            },
+            {
+              "type": "meal",
+              "time": "07:30 PM to 10:00 PM",
+              "description": "Dinner"
+            },
+            {
+              "type": "activity",
+              "time": "09:00 PM to 10:30 PM",
+              "description": "Cultural activities"
+            }
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Departure Day",
+          "schedule": [
+            {
+              "type": "meal",
+              "time": "06:00 AM to 06:30 AM",
+              "description": "Morning tea"
+            },
+            {
+              "type": "activity",
+              "time": "06:30 AM to 07:30 AM",
+              "description": "Yoga session"
+            },
+            {
+              "type": "meal",
+              "time": "07:30 AM to 09:30 AM",
+              "description": "Breakfast"
+            },
+            {
+              "type": "checkout",
+              "time": "09:30 AM",
+              "description": "Check-out"
+            },
+            {
+              "type": "activity",
+              "time": "11:30 AM to 02:00 PM",
+              "description": "Smritivan Earthquake Museum visit (closed Mondays)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packageId": 3,
+      "packageName": "3 Night / 4 days",
+      "days": [
+        {
+          "day": "Day 1",
+          "title": "Arrival Day",
+          "schedule": [
+            {
+              "type": "transfer",
+              "time": "08:15 AM to 03:30 PM",
+              "description": "Transfer from Bhuj to Dhordo"
+            },
+            {
+              "type": "checkin",
+              "time": "12:30 PM",
+              "description": "Check-in"
+            },
+            {
+              "type": "activity",
+              "time": "12:30 PM Onwards",
+              "description": "Welcome and check-in"
+            },
+            {
+              "type": "meal",
+              "time": "12:30 PM to 02:30 PM",
+              "description": "Lunch"
+            },
+            {
+              "type": "activity",
+              "time": "02:30 PM to 04:30 PM",
+              "description": "Activities"
+            },
+            {
+              "type": "meal",
+              "time": "04:00 PM to 05:00 PM",
+              "description": "Hi-Tea"
+            },
+            {
+              "type": "activity",
+              "time": "05:00 PM to 07:00 PM",
+              "description": "Sunset Point"
+            },
+            {
+              "type": "transfer",
+              "time": "07:00 PM to 07:30 PM",
+              "description": "Return to camp"
+            },
+            {
+              "type": "meal",
+              "time": "07:30 PM to 10:00 PM",
+              "description": "Dinner"
+            },
+            {
+              "type": "activity",
+              "time": "09:00 PM to 10:30 PM",
+              "description": "Cultural shows"
+            }
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Kala Dungar Day",
+          "schedule": [
+            {
+              "type": "meal",
+              "time": "06:00 AM to 06:30 AM",
+              "description": "Morning tea"
+            },
+            {
+              "type": "activity",
+              "time": "06:30 AM to 07:30 AM",
+              "description": "Yoga"
+            },
+            {
+              "type": "activity",
+              "time": "06:30 AM to 07:00 AM",
+              "description": "Sunrise Point"
+            },
+            {
+              "type": "meal",
+              "time": "07:30 AM to 10:00 AM",
+              "description": "Breakfast"
+            },
+            {
+              "type": "activity",
+              "time": "10:00 AM to 12:30 PM",
+              "description": "Activities"
+            },
+            {
+              "type": "meal",
+              "time": "12:30 PM to 02:30 PM",
+              "description": "Lunch"
+            },
+            {
+              "type": "excursion",
+              "time": "03:00 PM to 07:30 PM",
+              "description": "Kala Dungar excursion"
+            },
+            {
+              "type": "meal",
+              "time": "07:30 PM to 10:00 PM",
+              "description": "Dinner"
+            },
+            {
+              "type": "activity",
+              "time": "09:00 PM to 10:30 PM",
+              "description": "Cultural activities"
+            }
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Dholavira Day",
+          "schedule": [
+            {
+              "type": "meal",
+              "time": "06:00 AM to 06:30 AM",
+              "description": "Morning tea"
+            },
+            {
+              "type": "activity",
+              "time": "06:30 AM to 07:30 AM",
+              "description": "Yoga"
+            },
+            {
+              "type": "meal",
+              "time": "07:30 AM to 08:00 AM",
+              "description": "Breakfast"
+            },
+            {
+              "type": "excursion",
+              "time": "08:30 AM to 10:30 AM",
+              "description": "Journey to Dholavira (90 km, ~2 hours via Road to Heaven)"
+            },
+            {
+              "type": "activity",
+              "time": "11:00 AM to 12:30 PM",
+              "description": "Dholavira Museum and Excavation Site exploration",
+              "notes": ["Museum closed on Fridays"]
+            },
+            {
+              "type": "meal",
+              "time": "12:30 PM to 02:30 PM",
+              "description": "Lunch"
+            },
+            {
+              "type": "transfer",
+              "time": "02:30 PM Onwards",
+              "description": "Return to Dhordo"
+            },
+            {
+              "type": "meal",
+              "time": "04:30 PM to 05:00 PM",
+              "description": "Hi-Tea"
+            },
+            {
+              "type": "activity",
+              "time": "05:00 PM to 07:30 PM",
+              "description": "Activities at Rann Utsav"
+            },
+            {
+              "type": "meal",
+              "time": "07:30 PM to 10:00 PM",
+              "description": "Dinner"
+            },
+            {
+              "type": "activity",
+              "time": "09:00 PM to 10:30 PM",
+              "description": "Cultural performances"
+            }
+          ],
+          "alternative": {
+            "title": "Nirona Village Alternative",
+            "schedule": [
+              {
+                "type": "excursion",
+                "time": "09:00 AM to 01:00 PM",
+                "description": "Nirona Village tour (Craft Village, 70 km)",
+                "highlights": ["Rogan Art demonstration (400-year-old craft)"]
+              },
+              {
+                "type": "meal",
+                "time": "01:00 PM to 02:30 PM",
+                "description": "Lunch"
+              },
+              {
+                "type": "meal",
+                "time": "04:30 PM to 05:00 PM",
+                "description": "Hi-Tea"
+              },
+              {
+                "type": "activity",
+                "time": "05:00 PM to 07:30 PM",
+                "description": "Activities"
+              },
+              {
+                "type": "meal",
+                "time": "07:30 PM to 10:00 PM",
+                "description": "Dinner"
+              },
+              {
+                "type": "activity",
+                "time": "09:00 PM to 10:30 PM",
+                "description": "Cultural shows"
+              }
+            ]
+          }
+        },
+        {
+          "day": "Day 4",
+          "title": "Departure Day",
+          "schedule": [
+            {
+              "type": "meal",
+              "time": "06:00 AM to 06:30 AM",
+              "description": "Morning tea"
+            },
+            {
+              "type": "activity",
+              "time": "06:30 AM to 07:30 AM",
+              "description": "Yoga"
+            },
+            {
+              "type": "meal",
+              "time": "07:30 AM to 09:30 AM",
+              "description": "Breakfast"
+            },
+            {
+              "type": "checkout",
+              "time": "09:30 AM",
+              "description": "Check-out"
+            },
+            {
+              "type": "activity",
+              "time": "11:30 AM to 02:00 PM",
+              "description": "Smritivan Earthquake Museum (closed Mondays)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packageId": 4,
+      "packageName": "4 Night / 5 days",
+      "days": [
+        {
+          "day": "Day 1",
+          "title": "Arrival Day",
+          "schedule": [
+            {
+              "type": "transfer",
+              "time": "08:15 AM to 03:30 PM",
+              "description": "Transfer from Bhuj to Dhordo"
+            },
+            {
+              "type": "checkin",
+              "time": "12:30 PM",
+              "description": "Check-in"
+            },
+            {
+              "type": "activity",
+              "time": "12:30 PM Onwards",
+              "description": "Welcome and check-in"
+            },
+            {
+              "type": "meal",
+              "time": "12:30 PM to 02:30 PM",
+              "description": "Lunch"
+            },
+            {
+              "type": "activity",
+              "time": "02:30 PM to 04:30 PM",
+              "description": "Activities"
+            },
+            {
+              "type": "meal",
+              "time": "04:00 PM to 05:00 PM",
+              "description": "Hi-Tea"
+            },
+            {
+              "type": "activity",
+              "time": "05:00 PM to 07:00 PM",
+              "description": "Sunset Point"
+            },
+            {
+              "type": "transfer",
+              "time": "07:00 PM to 07:30 PM",
+              "description": "Return to camp"
+            },
+            {
+              "type": "meal",
+              "time": "07:30 PM to 10:00 PM",
+              "description": "Dinner"
+            },
+            {
+              "type": "activity",
+              "time": "09:00 PM to 10:30 PM",
+              "description": "Cultural shows"
+            }
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Kala Dungar Day",
+          "schedule": [
+            {
+              "type": "meal",
+              "time": "06:00 AM to 06:30 AM",
+              "description": "Morning tea"
+            },
+            {
+              "type": "activity",
+              "time": "06:30 AM to 07:30 AM",
+              "description": "Yoga"
+            },
+            {
+              "type": "activity",
+              "time": "06:30 AM to 07:00 AM",
+              "description": "Sunrise Point"
+            },
+            {
+              "type": "meal",
+              "time": "07:30 AM to 10:00 AM",
+              "description": "Breakfast"
+            },
+            {
+              "type": "activity",
+              "time": "10:00 AM to 12:30 PM",
+              "description": "Activities"
+            },
+            {
+              "type": "meal",
+              "time": "12:30 PM to 02:30 PM",
+              "description": "Lunch"
+            },
+            {
+              "type": "excursion",
+              "time": "03:00 PM to 07:30 PM",
+              "description": "Kala Dungar excursion"
+            },
+            {
+              "type": "meal",
+              "time": "07:30 PM to 10:00 PM",
+              "description": "Dinner"
+            },
+            {
+              "type": "activity",
+              "time": "09:00 PM to 10:30 PM",
+              "description": "Cultural activities"
+            }
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Dholavira Day",
+          "schedule": [
+            {
+              "type": "meal",
+              "time": "06:00 AM to 06:30 AM",
+              "description": "Morning tea"
+            },
+            {
+              "type": "activity",
+              "time": "06:30 AM to 07:30 AM",
+              "description": "Yoga"
+            },
+            {
+              "type": "meal",
+              "time": "07:30 AM to 08:00 AM",
+              "description": "Breakfast"
+            },
+            {
+              "type": "excursion",
+              "time": "08:30 AM to 10:30 AM",
+              "description": "Journey to Dholavira"
+            },
+            {
+              "type": "activity",
+              "time": "11:00 AM to 12:30 PM",
+              "description": "Dholavira Museum and Excavation Site"
+            },
+            {
+              "type": "meal",
+              "time": "12:30 PM to 02:30 PM",
+              "description": "Lunch"
+            },
+            {
+              "type": "transfer",
+              "time": "02:30 PM Onwards",
+              "description": "Return to Dhordo"
+            },
+            {
+              "type": "meal",
+              "time": "04:30 PM to 05:00 PM",
+              "description": "Hi-Tea"
+            },
+            {
+              "type": "activity",
+              "time": "05:00 PM to 07:00 PM",
+              "description": "Activities with guide"
+            },
+            {
+              "type": "meal",
+              "time": "07:30 PM to 10:00 PM",
+              "description": "Dinner"
+            },
+            {
+              "type": "activity",
+              "time": "09:00 PM to 10:30 PM",
+              "description": "Cultural performances"
+            }
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Nirona Village Day",
+          "schedule": [
+            {
+              "type": "meal",
+              "time": "06:00 AM to 06:30 AM",
+              "description": "Morning tea"
+            },
+            {
+              "type": "activity",
+              "time": "06:30 AM to 07:30 AM",
+              "description": "Yoga"
+            },
+            {
+              "type": "meal",
+              "time": "07:30 AM to 08:00 AM",
+              "description": "Breakfast"
+            },
+            {
+              "type": "excursion",
+              "time": "09:00 AM to 01:00 PM",
+              "description": "Nirona Village tour - Craft Village (70 km)",
+              "highlights": ["Rogan Art demonstration (400-year-old traditional craft)"]
+            },
+            {
+              "type": "meal",
+              "time": "01:00 PM to 02:30 PM",
+              "description": "Lunch"
+            },
+            {
+              "type": "meal",
+              "time": "04:30 PM to 05:00 PM",
+              "description": "Hi-Tea"
+            },
+            {
+              "type": "activity",
+              "time": "05:00 PM to 07:00 PM",
+              "description": "Activities at Rann Utsav with guide"
+            },
+            {
+              "type": "meal",
+              "time": "07:30 PM to 10:00 PM",
+              "description": "Dinner"
+            },
+            {
+              "type": "activity",
+              "time": "09:00 PM to 10:30 PM",
+              "description": "Cultural performances"
+            }
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Departure Day",
+          "schedule": [
+            {
+              "type": "meal",
+              "time": "06:00 AM to 06:30 AM",
+              "description": "Morning tea"
+            },
+            {
+              "type": "activity",
+              "time": "06:30 AM to 07:30 AM",
+              "description": "Yoga"
+            },
+            {
+              "type": "meal",
+              "time": "07:30 AM to 09:30 AM",
+              "description": "Breakfast"
+            },
+            {
+              "type": "checkout",
+              "time": "09:30 AM",
+              "description": "Check-out"
+            },
+            {
+              "type": "activity",
+              "time": "11:30 AM to 02:00 PM",
+              "description": "Smritivan Earthquake Museum (closed Mondays)"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "version": "1.0",
+    "lastUpdated": "2025-12-08",
+    "currency": "INR",
+    "location": "Rann Utsav - The Tent City, Dhordo, Kutch",
+    "validity": "November 2024 - March 2025",
+    "contact": {
+      "phone": "+91-XXXXXXXXXX",
+      "email": "info@rannutsav.com"
+    }
+  }
+}

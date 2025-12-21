@@ -17,7 +17,7 @@ export default function ContactUs() {
   return (
     <>
       <HeaderBanner
-        bgImage="/img/_RC10943.jpg" // Change to your image path
+        bgImage="/img/bg4-lg.jpg"
         title="Contact Us"
         breadcrumbs={[
           { label: "Home", href: "/" },

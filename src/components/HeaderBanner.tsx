@@ -14,14 +14,21 @@ export default function HeaderBanner({ bgImage, title, breadcrumbs }: HeaderBann
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.1 }}
-      className="container-fluid py-5 mb-5"
+      className="container-fluid py-5 mb-5 position-relative"
       style={{
         backgroundImage: `url(${bgImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      <div className="container py-5">
+      {/* Black opacity overlay */}
+      <div
+        className="position-absolute top-0 start-0 w-100 h-100"
+        style={{
+          backgroundColor: "rgba(0, 0, 0, 0.5)",
+        }}
+      ></div>
+      <div className="container py-5 position-relative" style={{ zIndex: 2 }}>
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}

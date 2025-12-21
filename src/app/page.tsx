@@ -6,7 +6,7 @@ import AboutSection from '@/components/AboutSection';
 import ServicesSection from '@/components/ServicesSection';
 import GallerySection from '@/components/GallerySection';
 import RoomsSection from '@/components/RoomsSection';
-import EnquiryPopup from '@/components/enquiryPopup';
+import FaqSection from '@/components/FaqSection';
 
 export default function Home() {
 
@@ -17,7 +17,7 @@ export default function Home() {
       <ServicesSection />
       <GallerySection />
       <RoomsSection />
-      <EnquiryPopup />    
+      <FaqSection />
     </>
   );
 }

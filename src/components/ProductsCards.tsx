@@ -18,15 +18,9 @@ interface Package {
 // Define the props for the component
 interface PackageCardsProps {
   packages: Package[];
-  selectedNight: number | null;
-  onSelect: (nightIndex: number) => void;
 }
 
-export default function PackageCards({ packages, selectedNight, onSelect }: PackageCardsProps) {
-
-  const handleCardClick = (id: number) => {
-    onSelect(id)
-  };
+export default function PackageCards({ packages }: PackageCardsProps) {
 
   return (
     <div className="card-container">
@@ -36,8 +30,7 @@ export default function PackageCards({ packages, selectedNight, onSelect }: Pack
         animate={{ opacity: 1 }}
         transition={{ duration: 1.0, delay: 0.4 }}
           key={pkg.id}
-          className={`card ${selectedNight === pkg.id ? 'active' : ''}`}
-          onClick={() => handleCardClick(pkg.id)}
+          className="card"
         >
           <div className="image-section">
             <Image src={pkg.image} alt={pkg.name} width={100} height={80} />

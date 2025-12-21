@@ -46,7 +46,7 @@ const PriceTable = ({ tariffData ,selectedNight , onSelect}: PriceTableProps)=>{
               <thead>
                 <tr>
                   <th>Room Type</th>
-                  {Array.from({ length: 4 }, (_, i) => (
+                  {Array.from({ length: 3 }, (_, i) => (
                     <th
                       key={i}
                       colSpan={2}
@@ -58,7 +58,7 @@ const PriceTable = ({ tariffData ,selectedNight , onSelect}: PriceTableProps)=>{
                 </tr>
                 <tr>
                 <td  className="fw-regular">Rates (INR) Per Person On <strong className="fw-bold">*Twin Sharing Basis</strong></td>
-                  {Array.from({ length: 4 }, (_, i) => (
+                  {Array.from({ length: 3 }, (_, i) => (
                     <React.Fragment key={`column-${i}`}>
                       <th className="fw-regular">
                         Rate <br />(Per Person)
@@ -93,8 +93,14 @@ const PriceTable = ({ tariffData ,selectedNight , onSelect}: PriceTableProps)=>{
             </table>
           </div>
           <div className="action-buttons">
-            <button>Book Now</button>
-            <button>Call Now</button>
+            <a href="/booking" className="btn btn-primary">
+              Book Now
+              {/* <i className="fas fa-calendar-check me-2"></i> */}
+            </a>
+            <a href="tel:+919876543210" className="btn btn-outline-primary">
+              Call Now
+              {/* <i className="fas fa-phone me-2"></i> */}
+            </a>
           </div>
         </motion.div>
       ))}
