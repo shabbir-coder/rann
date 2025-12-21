@@ -107,7 +107,7 @@ const BookingForm = () => {
     termsAccepted: false
   });
 
-  const [errors, setErrors] = useState({
+  const [_errors, setErrors] = useState({
     package: "",
     checkInDate: "",
     tentType: "",
