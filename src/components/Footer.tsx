@@ -10,7 +10,7 @@ export const Footer = () => {
         { href: "/accomodation", label: "Accommodation" },
         { href: "/activities", label: "Activities" },
         { href: "/attractions", label: "Attractions" },
-        { href: "/booking", label: "Booking" },
+        // { href: "/booking", label: "Booking" },
         { href: "/contact-us", label: "Contact Us" },
         { href: "/gallery", label: "Gallery" },
         { href: "/packages", label: "Packages" },
@@ -18,7 +18,7 @@ export const Footer = () => {
     ];
 
     const quickLinks = [
-        { href: "/booking", label: "Book Now" },
+        // { href: "/booking", label: "Book Now" },
         { href: "/packages", label: "Tour Packages" },
         { href: "/gallery", label: "Photo Gallery" },
         { href: "/contact-us", label: "Enquiry" },

@@ -8,16 +8,14 @@ interface FormData {
   name: string;
   email: string;
   phone: string;
-  month: string;
-  package: string;
+  message: string;
 }
 
 interface FormErrors extends Record<string, string | undefined> {
   name?: string;
   email?: string;
   phone?: string;
-  month?: string;
-  package?: string;
+  message?: string;
 }
 
 const EnquiryPopup = forwardRef((props, ref) => {
@@ -25,8 +23,7 @@ const EnquiryPopup = forwardRef((props, ref) => {
     name: '',
     email: '',
     phone: '',
-    month: '',
-    package: ''
+    message: ''
   });
   
   const [errors, setErrors] = useState<FormErrors>({});
@@ -73,7 +70,7 @@ const EnquiryPopup = forwardRef((props, ref) => {
     });
   }, []);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -94,8 +91,7 @@ const EnquiryPopup = forwardRef((props, ref) => {
     } else if (!/^[0-9]{10,15}$/.test(formData.phone)) {
       newErrors.phone = 'Please enter a valid phone number';
     }
-    if (!formData.month) newErrors.month = 'Please select a month';
-    if (!formData.package) newErrors.package = 'Please select a package';
+    if (!formData.message.trim()) newErrors.message = 'Enquiry message is required';
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -114,8 +110,7 @@ const EnquiryPopup = forwardRef((props, ref) => {
           name: '',
           email: '',
           phone: '',
-          month: '',
-          package: ''
+          message: ''
         });
       }, 10000);
     }
@@ -235,40 +230,19 @@ const EnquiryPopup = forwardRef((props, ref) => {
                         {errors.phone && <div className="invalid-feedback">{errors.phone}</div>}
                       </div>
                       
-                      <div className="mb-3">
-                        <label htmlFor="month" className="form-label">Preferred Travel Month</label>
-                        <select
-                          className={`form-select ${errors.month ? 'is-invalid' : ''}`}
-                          id="month"
-                          name="month"
-                          value={formData.month}
-                          onChange={handleChange}
-                        >
-                          <option value="" disabled>Select month</option>
-                          <option value="November">November</option>
-                          <option value="December">December</option>
-                          <option value="January">January</option>
-                          <option value="February">February</option>
-                        </select>
-                        {errors.month && <div className="invalid-feedback">{errors.month}</div>}
-                      </div>
                       
                       <div className="mb-4">
-                        <label htmlFor="package" className="form-label">Package Interested In</label>
-                        <select
-                          className={`form-select ${errors.package ? 'is-invalid' : ''}`}
-                          id="package"
-                          name="package"
-                          value={formData.package}
+                        <label htmlFor="message" className="form-label">Enquiry Message</label>
+                        <textarea
+                          className={`form-control ${errors.message ? 'is-invalid' : ''}`}
+                          id="message"
+                          name="message"
+                          value={formData.message}
                           onChange={handleChange}
-                        >
-                          <option value="" disabled>Select package</option>
-                          <option value="Tent City">Tent City Experience</option>
-                          <option value="Deluxe">Deluxe Package</option>
-                          <option value="Premium">Premium Package</option>
-                          <option value="Custom">Custom Package</option>
-                        </select>
-                        {errors.package && <div className="invalid-feedback">{errors.package}</div>}
+                          placeholder="Enter your enquiry message"
+                          rows={3}
+                        />
+                        {errors.message && <div className="invalid-feedback">{errors.message}</div>}
                       </div>
                       
                       <button 

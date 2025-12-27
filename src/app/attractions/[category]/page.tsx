@@ -190,7 +190,7 @@ export default function ActivitiesPage() {
                   <FiMail /> Inquiry Now
                 </button>
                 <button className="btn btn-primary d-flex align-items-center gap-2 px-3 px-md-4 py-2">
-                  <FiCalendar /> Book Now
+                  <FiCalendar /> Enquire Now
                 </button>
               </div>
             </motion.div>

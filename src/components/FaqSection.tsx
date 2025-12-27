@@ -18,7 +18,7 @@ const FaqSection = () => {
         {
             question: "What happens in Rann Utsav?",
             answer: "One of India's popular tourism festivals, Rann Utsav celebrates the rich cultural and artistic heritage of Kutch and the wonders of nature in the White Desert. The Hon. Prime Minister Shri Narendra Modi, who was Gujarat's chief minister at the time, came up with the idea for Rann Utsav.",
-            link: "/booking",
+            link: "/packages",
             linkText: "Book Your Stay"
         },
         {

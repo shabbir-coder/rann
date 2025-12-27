@@ -45,7 +45,7 @@ export default function PackageCards({ packages }: PackageCardsProps) {
               &nbsp;{pkg.itinerary}</p> */}
               <div className="bottom-section">
                 <p className="price">Starting from <span>{pkg.price}</span></p>
-                <button className="book-now">Book Now</button>
+                <button className="book-now">Enquire Now</button>
               </div>
           </div>
         </motion.div>

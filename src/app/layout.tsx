@@ -130,7 +130,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 "Book luxury tents at Rann Utsav Tent City Dhordo 2025-26. Traditional food, cultural programs & White Rann views.",
               offers: {
                 "@type": "Offer",
-                url: "https://www.rannutsaftentcity.net/booking",
+                url: "https://www.rannutsaftentcity.net/packages",
                 priceCurrency: "INR",
                 availability: "https://schema.org/InStock",
               },

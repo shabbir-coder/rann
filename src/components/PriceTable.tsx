@@ -93,8 +93,8 @@ const PriceTable = ({ tariffData ,selectedNight , onSelect}: PriceTableProps)=>{
             </table>
           </div>
           <div className="action-buttons">
-            <a href="/booking" className="btn btn-primary">
-              Book Now
+            <a href="/packages" className="btn btn-primary">
+              Enquire Now
               {/* <i className="fas fa-calendar-check me-2"></i> */}
             </a>
             <a href="tel:+919876543210" className="btn btn-outline-primary">

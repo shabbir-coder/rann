@@ -82,7 +82,7 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-          <a href="/booking" className="btn btn-primary">Book Now<FaArrowRight className="ms-3"/></a>
+          <a href="/packages" className="btn btn-primary">Enquire Now<FaArrowRight className="ms-3"/></a>
         </div>
       </nav>
 
@@ -139,8 +139,8 @@ const Navbar = () => {
               </div>
             </div> 
             
-            <a href="/booking" className="mobile-book-btn" onClick={toggleMobileMenu}>
-              Book Now <FaArrowRight className="ms-2"/>
+            <a href="/packages" className="mobile-book-btn" onClick={toggleMobileMenu}>
+              Enquire Now <FaArrowRight className="ms-2"/>
             </a>
           </div>
         </div>

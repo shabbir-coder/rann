@@ -2189,6 +2189,17 @@
   border-radius: 10px;
 }
 
+.gallery-section .swiper-pagination-bullet {
+  background-color: rgba(244, 241, 242, 0.5) !important;
+  border: 1px solid rgb(255, 255, 255,0.5);
+  opacity: 1;
+}
+
+.gallery-section .swiper-pagination-bullet-active {
+  background-color: #b82e88 !important;
+  border:1px solid white;
+}
+
 /* Floating Button Bounce Animation */
 @keyframes bounce {
 

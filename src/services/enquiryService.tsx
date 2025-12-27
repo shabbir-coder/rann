@@ -5,8 +5,7 @@ export interface EnquiryData {
   name: string;
   email: string;
   phone: string;
-  month: string;
-  package: string;
+  message: string;
 }
 
 const API_URL = environment.API_URL
