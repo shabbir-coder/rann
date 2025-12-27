@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useEnquiry } from './EnquiryContext';
 
 interface FaqItem {
     question: string;
@@ -13,43 +14,43 @@ interface FaqItem {
 
 const FaqSection = () => {
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
+    const { openModal } = useEnquiry();
 
     const faqData: FaqItem[] = [
         {
             question: "What happens in Rann Utsav?",
-            answer: "One of India's popular tourism festivals, Rann Utsav celebrates the rich cultural and artistic heritage of Kutch and the wonders of nature in the White Desert. The Hon. Prime Minister Shri Narendra Modi, who was Gujarat's chief minister at the time, came up with the idea for Rann Utsav.",
-            link: "/packages",
-            linkText: "Book Your Stay"
+            answer: "Rann Utsav is one of India's most beloved cultural festivals, showcasing the vibrant heritage of Kutch and the natural beauty of the White Desert. The concept was initiated by Shri Narendra Modi during his tenure as Gujarat's Chief Minister.",
+            linkText: "Enquire Now"
         },
         {
             question: "Is Rann Utsav worth visiting?",
-            answer: "If you prefer greater comfort in your choice of accommodation, then the Rann Utsav is definitely the best time to visit the Rann of Kutch! Sightseeing: Rann Utsav packages come with many included and optional sightseeing tours of other interesting places nearby, such as Bhuj, Dhordo, Mandvi Beach, and Dholavira, etc.",
+            answer: "Absolutely! If comfort is a priority, Rann Utsav offers the ideal experience in the Rann of Kutch. Packages include various sightseeing options to nearby attractions like Bhuj, Dhordo, Mandvi Beach, and Dholavira.",
             link: "/gallery",
             linkText: "View Gallery"
         },
         {
-            question: "What is the fees of Rann Utsav?",
-            answer: "Rann Utsav package fees vary depending on the tent type and duration of stay.",
+            question: "What is the cost of Rann Utsav packages?",
+            answer: "The pricing for Rann Utsav packages depends on the type of tent and length of your stay.",
             link: "/packages",
             linkText: "View Packages"
         },
         {
             question: "What is the best time to visit Rann of Kutch?",
-            answer: "Winters are the best time to visit Kutch. The temperature during these months is between 25 to 12 degrees Celsius and makes the weather perfect for sightseeing. This is also the best time to visit Rann of Kutch Festival.",
+            answer: "The winter season is perfect for exploring Kutch, with temperatures ranging from 12 to 25 degrees Celsius, ideal for outdoor activities. It's also when the Rann Utsav Festival takes place.",
             link: "/",
             linkText: "Learn More"
         },
         {
-            question: "How can the Tent City, Rann Utsav, be reached?",
-            answer: "Rann Utsav Tent City is reached by train, road, and air by Bhuj, the nearest city. There are cars and bus rides from Bhuj to Dhordo, the location of the Tent City."
+            question: "How do I get to the Rann Utsav Tent City?",
+            answer: "The Tent City is accessible via train, road, or air through Bhuj, the closest major city. From Bhuj, you can take a car or bus to Dhordo, where the Tent City is located."
         },
         {
-            question: "Which adventure activities can tourists enjoy at Rann Utsav Tent City?",
-            answer: "Tourists at Rann Utsav Tent City can enjoy exciting adventure activities like desert safaris, camel rides, ATV rides, cycling in the White Rann, paramotoring, and hot air balloon rides, offering a perfect mix of thrill and scenic beauty."
+            question: "What adventure activities are available at Rann Utsav?",
+            answer: "Visitors can enjoy thrilling experiences such as desert safaris, camel rides, ATV tours, cycling across the White Rann, paramotoring, and hot air ballooning, blending excitement with stunning landscapes."
         },
         {
-            question: "Is food included in the Rann Utsav Tent City package?",
-            answer: "Yes, food is included in the Rann Utsav Tent City package. Guests are served breakfast, lunch, evening tea, and dinner with a variety of traditional Kutchi, Gujarati, and multi-cuisine options."
+            question: "Does the Rann Utsav package include meals?",
+            answer: "Yes, meals are part of the package. Enjoy breakfast, lunch, evening tea, and dinner featuring a mix of traditional Kutchi, Gujarati, and international cuisines."
         }
     ];
 
@@ -116,11 +117,15 @@ const FaqSection = () => {
                                     >
                                         <div className="accordion-body">
                                             <p className="mb-3">{faq.answer}</p>
-                                            {faq.link && (
+                                            {faq.link ? (
                                                 <Link href={faq.link} className="btn btn-outline-primary btn-sm">
                                                     {faq.linkText}
                                                 </Link>
-                                            )}
+                                            ) : faq.linkText === "Enquire Now" ? (
+                                                <button onClick={openModal} className="btn btn-outline-primary btn-sm">
+                                                    {faq.linkText}
+                                                </button>
+                                            ) : null}
                                         </div>
                                     </div>
                                 </motion.div>

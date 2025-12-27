@@ -1,15 +1,17 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { FaArrowRight, FaTimes } from "react-icons/fa";
+import { FaArrowRight, FaTimes, FaEnvelope } from "react-icons/fa";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useEnquiry } from "./EnquiryContext";
 
 const Navbar = () => {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileAttractionsOpen, setMobileAttractionsOpen] = useState(false);
+  const { openModal } = useEnquiry();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,16 +46,30 @@ const Navbar = () => {
             loading="lazy" 
           />
         </Link>
-        
-        {/* Animated Mobile Toggle Button */}
-        <button 
-          type="button" 
-          className="navbar-toggler me-2" 
-          onClick={toggleMobileMenu}
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
+
+        {/* Mobile Controls */}
+        <div className="d-flex align-items-center">
+          {/* Mobile Enquiry Icon */}
+          <button
+            type="button"
+            className="btn d-lg-none me-1 p-1"
+            onClick={openModal}
+            aria-label="Open Enquiry"
+            style={{ marginRight: '5px' }}
+          >
+            <FaEnvelope size={20} />
+          </button>
+
+          {/* Animated Mobile Toggle Button */}
+          <button
+            type="button"
+            className="navbar-toggler"
+            onClick={toggleMobileMenu}
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+        </div>
 
         {/* Desktop Menu */}
         <div className="collapse navbar-collapse py-4 py-lg-0" id="navbarCollapse">
@@ -82,7 +98,7 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-          <a href="/packages" className="btn btn-primary">Enquire Now<FaArrowRight className="ms-3"/></a>
+          <button onClick={openModal} className="btn btn-primary">Enquire Now<FaArrowRight className="ms-3"/></button>
         </div>
       </nav>
 
@@ -139,9 +155,9 @@ const Navbar = () => {
               </div>
             </div> 
             
-            <a href="/packages" className="mobile-book-btn" onClick={toggleMobileMenu}>
+            <button className="mobile-book-btn" onClick={() => { openModal(); toggleMobileMenu(); }}>
               Enquire Now <FaArrowRight className="ms-2"/>
-            </a>
+            </button>
           </div>
         </div>
       </div>
