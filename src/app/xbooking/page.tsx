@@ -107,23 +107,23 @@ const BookingForm = () => {
     termsAccepted: false
   });
 
-  const [errors, setErrors] = useState({
-    package: "",
-    checkInDate: "",
-    tentType: "",
-    contactData: {
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      country: "",
-      state: "",
-      city: "",
-      pincode: ""
-    },
-    travelers: [] as string[],
-    termsAccepted: ""
-  });
+  // const [_errors, setErrors] = useState({
+  //   package: "",
+  //   checkInDate: "",
+  //   tentType: "",
+  //   contactData: {
+  //     firstName: "",
+  //     lastName: "",
+  //     email: "",
+  //     phone: "",
+  //     country: "",
+  //     state: "",
+  //     city: "",
+  //     pincode: ""
+  //   },
+  //   travelers: [] as string[],
+  //   termsAccepted: ""
+  // });
 
   const nextStep = () => {
     if (validateStep(currentStep)) {
