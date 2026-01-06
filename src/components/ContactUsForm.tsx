@@ -8,7 +8,6 @@ const ContactUsForm = () => {
     name: "",
     email: "",
     phone: "",
-    month: "",
     message: "",
   });
 
@@ -33,8 +32,7 @@ const ContactUsForm = () => {
     if (!formData.name) newErrors.name = "Full Name is required";
     if (!formData.email.includes("@")) newErrors.email = "Enter a valid email";
     if (!formData.phone || formData.phone.length < 10) newErrors.phone = "Enter a valid phone number";
-    if (!formData.month) newErrors.month = "Please select a month";
-    if (!formData.message) newErrors.message = "Message cannot be empty";
+    if (!formData.message) newErrors.message = "Enquiry message cannot be empty";
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -59,44 +57,51 @@ const ContactUsForm = () => {
 
         <form onSubmit={handleSubmit}>
           <div className="row g-3">
-            {[
-              { id: "name", label: "Full Name", type: "text" },
-              { id: "email", label: "Your Email", type: "email" },
-              { id: "phone", label: "Phone Number", type: "number" },
-            ].map((field) => (
-              <div key={field.id} className="col-md-6">
-                <div className="form-floating">
-                <input
-                    type={field.type}
-                    className={`form-control bg-light border-0 ${getError(field.id) ? "is-invalid" : ""}`}
-                    id={field.id as keyof typeof formData} // ✅ Ensure TypeScript understands it's a valid key
-                    value={formData[field.id as keyof typeof formData]}
-                    onChange={handleChange}
-                    placeholder={field.label}
-                    />
-                  <label htmlFor={field.id}>{field.label}</label>
-                  {errors[field.id] && <div className="invalid-feedback">{errors[field.id]}</div>}
-                </div>
-              </div>
-            ))}
-
+            {/* First row: First Name and Phone Number */}
             <div className="col-md-6">
               <div className="form-floating">
-                <select
-                  id="month"
-                  className={`form-control bg-light border-0 ${errors.month ? "is-invalid" : ""}`}
-                  value={formData.month}
+                <input
+                  type="text"
+                  className={`form-control bg-light border-0 ${getError("name") ? "is-invalid" : ""}`}
+                  id="name"
+                  value={formData.name}
                   onChange={handleChange}
-                >
-                  <option value="" disabled hidden>Select Month to travel</option>
-                  {["September", "October", "November", "December", "January", "February", "March"].map((month) => (
-                    <option key={month} value={month.toLowerCase()}>{month}</option>
-                  ))}
-                </select>
-                <label htmlFor="month">Select a Month:</label>
-                {errors.month && <div className="invalid-feedback">{errors.month}</div>}
+                  placeholder="First Name"
+                />
+                <label htmlFor="name">First Name</label>
+                {errors.name && <div className="invalid-feedback">{errors.name}</div>}
               </div>
             </div>
+            <div className="col-md-6">
+              <div className="form-floating">
+                <input
+                  type="number"
+                  className={`form-control bg-light border-0 ${getError("phone") ? "is-invalid" : ""}`}
+                  id="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="Phone Number"
+                />
+                <label htmlFor="phone">Phone Number</label>
+                {errors.phone && <div className="invalid-feedback">{errors.phone}</div>}
+              </div>
+            </div>
+            {/* Second row: Email full width */}
+            <div className="col-12">
+              <div className="form-floating">
+                <input
+                  type="email"
+                  className={`form-control bg-light border-0 ${getError("email") ? "is-invalid" : ""}`}
+                  id="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Your Email"
+                />
+                <label htmlFor="email">Your Email</label>
+                {errors.email && <div className="invalid-feedback">{errors.email}</div>}
+              </div>
+            </div>
+
 
             <div className="col-12">
               <div className="form-floating">
@@ -105,10 +110,10 @@ const ContactUsForm = () => {
                   id="message"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Leave a message here"
+                  placeholder="Leave an enquiry message here"
                   style={{ height: "100px" }}
                 ></textarea>
-                <label htmlFor="message">Message</label>
+                <label htmlFor="message">Enquiry Message</label>
                 {errors.message && <div className="invalid-feedback">{errors.message}</div>}
               </div>
             </div>
@@ -118,6 +123,19 @@ const ContactUsForm = () => {
             </div>
           </div>
         </form>
+      </div>
+      <div className="col-lg-6">
+        <div className="map-container" style={{ height: '100%' }}>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.552488356904!2d69.5051299!3d23.798945099999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3951b7157fd00077%3A0x327dda157acd4bb9!2sRann%20Utsav%20-%20The%20Tent%20City!5e0!3m2!1sen!2sin!4v1766756649832!5m2!1sen!2sin"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
       </div>
     </motion.div>
   );

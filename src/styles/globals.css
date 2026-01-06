@@ -882,7 +882,7 @@
 
   .card {
     width: 75vw;
-    height: 380px;
+    height: 315px;
   }
 
   .content-section {
@@ -2189,6 +2189,17 @@
   border-radius: 10px;
 }
 
+.gallery-section .swiper-pagination-bullet {
+  background-color: rgba(244, 241, 242, 0.5) !important;
+  border: 1px solid rgb(255, 255, 255,0.5);
+  opacity: 1;
+}
+
+.gallery-section .swiper-pagination-bullet-active {
+  background-color: #b82e88 !important;
+  border:1px solid white;
+}
+
 /* Floating Button Bounce Animation */
 @keyframes bounce {
 
@@ -2209,24 +2220,51 @@
   }
 }
 
-.floating-enquiry-btn {
+.floating-buttons {
   position: fixed;
   bottom: 20px;
   right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1050;
+}
+
+.floating-btn {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: var(--primary);
   border: none;
   color: white;
   font-size: 24px;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  z-index: 1050;
   display: flex;
   align-items: center;
   justify-content: center;
   animation: bounce 2s infinite;
+  transition: all 0.3s ease;
+}
+
+.floating-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.phone-btn {
+  background-color: var(--primary);
+}
+
+.whatsapp-btn {
+  background-color: #25d366;
+}
+
+@media (max-width: 551px) {
+  .floating-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 767px) {

@@ -4,6 +4,7 @@ import React from 'react';
 // import { HiClipboardList } from "react-icons/hi";
 import { motion } from "framer-motion";
 import Image from 'next/image';
+import { useEnquiry } from './EnquiryContext';
 
 // Define the type for package data
 interface Package {
@@ -21,6 +22,7 @@ interface PackageCardsProps {
 }
 
 export default function PackageCards({ packages }: PackageCardsProps) {
+  const { openModal } = useEnquiry();
 
   return (
     <div className="card-container">
@@ -45,7 +47,7 @@ export default function PackageCards({ packages }: PackageCardsProps) {
               &nbsp;{pkg.itinerary}</p> */}
               <div className="bottom-section">
                 <p className="price">Starting from <span>{pkg.price}</span></p>
-                <button className="book-now">Book Now</button>
+                <button className="book-now" onClick={openModal}>Enquire Now</button>
               </div>
           </div>
         </motion.div>

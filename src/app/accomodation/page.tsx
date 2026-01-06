@@ -2,10 +2,13 @@
 import HeaderBanner from '@/components/HeaderBanner';
 import Head from 'next/head';
 import Image from 'next/image';
-import { FiCalendar, FiCheckCircle, FiMail } from 'react-icons/fi';
+import { FiCalendar, FiCheckCircle, FiPhone } from 'react-icons/fi';
 import { motion } from 'framer-motion';
+import { useEnquiry } from '@/components/EnquiryContext';
 
 export default function Accomodation() {
+  const { openModal } = useEnquiry();
+
   const suites = [
     {
       title: "Darbari Suite",
@@ -168,11 +171,11 @@ export default function Accomodation() {
                 <p className="text-secondary mb-3 mb-md-4 fs-6 lh-base" dangerouslySetInnerHTML={{ __html: suite.description }} />
                 
                 <div className="d-flex flex-wrap gap-2 gap-md-3 mb-3 mb-md-4">
-                  <button className="btn btn-outline-primary d-flex align-items-center gap-2 px-3 px-md-4 py-2">
-                    <FiMail /> Inquiry Now
-                  </button>
-                  <button className="btn btn-primary d-flex align-items-center gap-2 px-3 px-md-4 py-2">
-                    <FiCalendar /> Book Now
+                  <a href="tel:+919521265253" className="btn btn-outline-primary d-flex align-items-center gap-2 px-3 px-md-4 py-2">
+                    <FiPhone /> Call Now
+                  </a>
+                  <button onClick={openModal} className="btn btn-primary d-flex align-items-center gap-2 px-3 px-md-4 py-2">
+                    <FiCalendar /> Enquire Now
                   </button>
                 </div>
 

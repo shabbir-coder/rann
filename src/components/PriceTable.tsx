@@ -1,6 +1,7 @@
 "use client"
 import React from "react";
 import { motion } from "framer-motion";
+import { useEnquiry } from './EnquiryContext';
 
 interface Price {
     nights: number;
@@ -26,6 +27,7 @@ interface Price {
   
 
 const PriceTable = ({ tariffData ,selectedNight , onSelect}: PriceTableProps)=>{
+    const { openModal } = useEnquiry();
 
     const handleNightClick = (nightIndex: number) => {
         onSelect(nightIndex)
@@ -93,10 +95,10 @@ const PriceTable = ({ tariffData ,selectedNight , onSelect}: PriceTableProps)=>{
             </table>
           </div>
           <div className="action-buttons">
-            <a href="/booking" className="btn btn-primary">
-              Book Now
+            <button onClick={openModal} className="btn btn-primary">
+              Enquire Now
               {/* <i className="fas fa-calendar-check me-2"></i> */}
-            </a>
+            </button>
             <a href="tel:+919876543210" className="btn btn-outline-primary">
               Call Now
               {/* <i className="fas fa-phone me-2"></i> */}

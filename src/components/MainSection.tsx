@@ -27,14 +27,14 @@ const MainSection = () => {
           <h1
             className="display-4 text-primary mb-2"
             style={{ fontFamily: "Dancing Script, cursive"}}>
-              Utsav-e-Rann
+              Rann Utsav
             </h1>
             <h4 className="text-dark oooh-baby-regular fw-bold mb-5">
               The majestic Rann of Kutch awaits you
             </h4>
           <div className="mt-3">
             <a href="" onClick={(e) => { e.preventDefault(); openModal(); }} className="btn btn-primary btn-ripple py-sm-3 px-3 px-sm-5">
-              Get Call
+              Get A Quote
             </a>
           </div>
         </motion.div>
