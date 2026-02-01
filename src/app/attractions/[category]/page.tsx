@@ -37,12 +37,12 @@ export default function ActivitiesPage() {
         },
         {
           title: "Kadiya Dhro",
-          image: "/img/nature/kadiya_dhro.jpg",
+          image: "/img/nature/kadiya_dhro.jpeg",
           description: "It is a synonym of vibrancy and newness, colorful and simple yet fulfilling. The gushing waters over the decades have created a mesmerizing natural rock art. It is a scenic delight with the beauty of a barren yet intriguing desert."
         },
         {
           title: "Dholavira Fossil Park",
-          image: "/img/nature/dholavira_fossil_park.jpg",
+          image: "/img/nature/dholavira_fossil_park.avif",
           description: "If you are seeking a tent city experience, then White Rann – The Tent City, Dholavira is certainly the ideal place for you. It is a Harappan-themed experience, steeped in history and culture, where you and your loved ones can enjoy the true essence of Dholavira’s golden legacy."
         }
       ]
@@ -55,12 +55,12 @@ export default function ActivitiesPage() {
       info: [
         {
           title: "Vijay Vilas Palace",
-          image: "/img/architecture/vijay_vilas_palace.jpg",
+          image: "/img/architecture/vijayvillas.jpg",
           description: "Built in 1929 by Maharao Vijay Singh, the palace is an eclectic blend of architectural styles, offering a panoramic view of the sea and is a favorite destination of Hindi filmmakers."
         },
         {
           title: "Swaminarayan Temple",
-          image: "/img/architecture/swaminarayan_temple.jpg",
+          image: "/img/architecture/swaminarayantemple.jpg",
           description: "Expanding a 35,000 sq. feet area, this intricately designed Swaminarayan Temple has 7 arching pinnacles with one central dome, 25 minor domes and 258 pillars."
         },
         {
@@ -88,7 +88,7 @@ export default function ActivitiesPage() {
       info: [
         {
           title: "Kutch Museum",
-          image: "/img/culture/kutch_museum.jpg",
+          image: "/img/culture/kutch_museum.jpeg",
           description: "The oldest museum in Gujarat, showcasing Kutch’s tribal culture, textiles, coins, and ancient scripts."
         },
         {
@@ -103,7 +103,7 @@ export default function ActivitiesPage() {
         },
         {
           title: "Mata no Madh",
-          image: "/img/culture/mata_no_madh.jpg",
+          image: "/img/culture/matanomadh.jpg",
           description: "A famous temple dedicated to Ashapura Mata, the Kuldevi of Kutch."
         },
         {
@@ -113,7 +113,7 @@ export default function ActivitiesPage() {
         },
         {
           title: "Rann Utsav Festival Grounds",
-          image: "/img/culture/rann_utsav.jpg",
+          image: "/img/culture/rann-utsav.jpg",
           description: "The center of celebrations where tourists enjoy cultural performances, camel rides, and local cuisine."
         }
       ]
