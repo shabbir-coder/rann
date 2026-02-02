@@ -97,7 +97,7 @@ export default function Accomodation() {
     },
     {
       title: "Non AC Swiss Cottages",
-      image: "/img/rooms/Non-AC-Accomodation.jpg",
+      image: "/img/rooms/nonaccottage.jpeg",
       description:
         "These charming cottages at <span class='text-primary fw-bold'>Rann Utsav</span> provide a comfortable, authentic stay with traditional decor elements, perfect for those who prefer natural ventilation during the pleasant winter months.",
       features: [
