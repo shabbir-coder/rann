@@ -26,87 +26,78 @@ const images = [
 const GallerySection = () => {
   return (
     <section className="gallery-section">
-        <div className="container-xxl py-5">
-          <div className="container">
-            {/* Header Section */}
-            <motion.div
-              className="row g-5 mb-5 align-items-end"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="col-lg-8">
-                <p>
-                  <span className="text-primary me-2">#</span>Our Gallery
-                </p>
-                <h1 className="display-5 mb-0">
-                  Let’s See Some{" "}
-                  <span className="text-primary cursive-regular">Rann Utsav</span>{" "}
-                  Moments
-                </h1>
-              </div>
-              <div className="col-lg-4 text-lg-end">
-                <Link className="btn btn-primary py-3 px-5" href="/gallery">
-                  Explore More
-                </Link>
-              </div>
-            </motion.div>
+      <div className="container-xxl py-5">
+        <div className="container">
+          {/* Header Section */}
+          <motion.div
+            className="row g-5 mb-5 align-items-end"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="col-lg-8">
+              <p>
+                <span className="text-primary me-2">#</span>Our Gallery
+              </p>
+              <h1 className="display-5 mb-0">
+                Let’s See Some{" "}
+                <span className="text-primary cursive-regular">Rann Utsav</span>{" "}
+                Moments
+              </h1>
+            </div>
+            <div className="col-lg-4 text-lg-end">
+              <Link className="btn btn-primary py-3 px-5" href="/gallery">
+                Explore More
+              </Link>
+            </div>
+          </motion.div>
 
-            <div className="row g-3">
-              <div className="col-md-6">
-                <Swiper
-                  spaceBetween={10}
-                  slidesPerView={1}
-                  loop={true}
-                  autoplay={{ delay: 3000 }}
-                  pagination={{ clickable: true }}
-                  modules={[Autoplay, Pagination]}
-                >
-                  {images.map((image, index) => (
-                    <SwiperSlide key={index}>
-                      {/* <Image
+          <div className="row g-3">
+            <div className="col-md-6">
+              <Swiper
+                spaceBetween={10}
+                slidesPerView={1}
+                loop={true}
+                autoplay={{ delay: 3000 }}
+                pagination={{ clickable: true }}
+                modules={[Autoplay, Pagination]}
+              >
+                {images.map((image, index) => (
+                  <SwiperSlide key={index}>
+                    {/* <Image
                                           src={image.src}
                                           alt={image.alt}
                                           width={800}
                                           height={600}
                                           className=""
                                       /> */}
-                      <img
-                        src={image.src}
-                        alt={image.alt}
-                        className="img-fluid"
-                      />
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
-              </div>
-              <div className="d-flex justify-content-center flex-column col-md-6">
-                {/* <div className=""> */}
-                <h3>Gallery Highlights</h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                  enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                  nisi ut aliquip ex ea commodo consequat.
-                </p>
-                <p>
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.
-                </p>
-                <p>
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                  quae ab illo inventore veritatis et quasi architecto beatae
-                  vitae dicta sunt explicabo.
-                </p>
-                {/* </div> */}
-              </div>
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="img-fluid"
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+            <div className="d-flex justify-content-center flex-column col-md-6">
+              {/* <div className=""> */}
+              <h3>Gallery Highlights</h3>
+              <p>
+                Step into the heart of Rann Utsav through our curated gallery — where every image tells a story of wonder, culture, and unforgettable experiences. From the golden hues of sunrise over the White Desert to candid moments of joy and celebration in the tent city, our collection captures the soul of this magical festival.
+              </p>
+              <p>
+                Explore breathtaking views of the vast salt plains under moonlit skies, intimate cultural performances that bring Kutch’s traditions to life, and the joyful moments shared by travelers from all over the world. Each photo is a snapshot of the vibrant energy, serene landscapes, and rich heritage that make Rann Utsav a truly remarkable experience.
+              </p>
+              <p>
+                Whether you’re reliving memories or dreaming of your first visit, our gallery offers a visual journey into the spirit of the festival — a celebration of culture, nature, and togetherness at the White Rann of Kutch.
+              </p>
+              {/* </div> */}
             </div>
           </div>
         </div>
+      </div>
     </section>
   );
 };

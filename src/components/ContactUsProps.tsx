@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 import { FaLocationDot, FaPhone, FaEnvelopeOpen } from "react-icons/fa6";
 
 const contactData = [
-  {
-    icon: <FaLocationDot className="text-primary" />,
-    title: "Address",
-    text: "Kalupur, Dreams Destinations, Ahmedabad",
-    delay: 0.5,
-  },
+  // {
+  //   icon: <FaLocationDot className="text-primary" />,
+  //   title: "Address",
+  //   text: "Kalupur, Dreams Destinations, Ahmedabad",
+  //   delay: 0.5,
+  // },
   {
     icon: <FaPhone className="text-primary" />,
     title: "Call Now",
@@ -32,7 +32,7 @@ const ContactUsProps = () => {
       {contactData.map((item, index) => (
         <motion.div
           key={index}
-          className="col-lg-4"
+          className="col-lg-6"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: item.delay }}
