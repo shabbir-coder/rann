@@ -114,18 +114,18 @@ export default function Accomodation() {
   return (
     <>
       <Head>
-        <title>Rannutsav - Accomodation</title>
+        <title>Rannutsav - Accommodation</title>
       </Head>
       <HeaderBanner
         bgImage="/img/bg2-lg.jpg"
-        title="Accomodations"
+        title="Accommodations"
         breadcrumbs={[
           { label: "Home", href: "/" },
-          { label: "Accomodations" }
+          { label: "Accommodations" }
         ]}
       />
       <div className="container">
-        <h4 className="text-2xl font-bold mb-4 border-left">&nbsp;Accomodations</h4>
+        <h4 className="text-2xl font-bold mb-4 border-left">&nbsp;Accommodations</h4>
         <p className='text-dark mb-0 fs-5 fs-md-6 lh-base'>Wake up to the golden glow of the <span className='text-primary fw-bold'>Rann of Kutch</span> as the morning sun paints the white desert in breathtaking hues. Sip on a steaming cup of tea outside your luxurious tent while soaking in the beauty of <span className='text-primary fw-bold'>Rann Utsav</span>, a celebration of culture, art, and adventure. Wander through the vibrant Tent City, where warm hospitality meets traditional craftsmanship, and indulge in authentic local cuisines served amidst regal interiors and elegant furnishings. Experience the charm of a world-class tented stay, offering unmatched comfort and a glimpse into Gujarat&apos;s rich heritage, making your visit truly unforgettable.</p>
       </div>
 

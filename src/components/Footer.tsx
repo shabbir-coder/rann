@@ -7,7 +7,7 @@ import { FaFacebookF, FaYoutube, FaInstagram } from "react-icons/fa";
 export const Footer = () => {
     const pageLinks = [
         { href: "/", label: "Home" },
-        { href: "/accomodation", label: "Accommodation" },
+        { href: "/accommodation", label: "Accommodation" },
         { href: "/activities", label: "Activities" },
         { href: "/attractions", label: "Attractions" },
         // { href: "/booking", label: "Booking" },
@@ -22,7 +22,7 @@ export const Footer = () => {
         { href: "/packages", label: "Tour Packages" },
         { href: "/gallery", label: "Photo Gallery" },
         { href: "/contact-us", label: "Enquiry" },
-        { href: "/accomodation", label: "Room Types" },
+        { href: "/accommodation", label: "Room Types" },
         { href: "/activities", label: "Activities" },
         { href: "/attractions", label: "Nearby Attractions" }
     ];

@@ -77,7 +77,7 @@ const Navbar = () => {
             <Link href="/" shallow={true} className={`nav-item nav-link ${pathname === "/" ? "active" : ""}`}>Home</Link>
             <Link href="/packages" shallow={true} className={`nav-item nav-link ${pathname === "/packages" ? "active" : ""}`}>Packages</Link>
             <Link href="/contact-us" shallow={true} className={`nav-item nav-link ${pathname === "/contact-us" ? "active" : ""}`}>Contact Us</Link>
-            <Link href="/accomodation" shallow={true} className={`nav-item nav-link ${pathname === "/accomodation" ? "active" : ""}`}>Accomodation</Link>
+            <Link href="/accommodation" shallow={true} className={`nav-item nav-link ${pathname === "/accommodation" ? "active" : ""}`}>Accommodation</Link>
             <Link href="/special-dates" shallow={true} className={`nav-item nav-link ${pathname === "/special-dates" ? "active" : ""}`}>Special Dates</Link>
             <div className="nav-item dropdown">
               <a
@@ -119,7 +119,7 @@ const Navbar = () => {
             <Link href="/" className={`mobile-nav-item ${pathname === "/" ? "active" : ""}`} onClick={toggleMobileMenu}>Home</Link>
             <Link href="/packages" className={`mobile-nav-item ${pathname === "/packages" ? "active" : ""}`} onClick={toggleMobileMenu}>Packages</Link>
             <Link href="/contact-us" className={`mobile-nav-item ${pathname === "/contact-us" ? "active" : ""}`} onClick={toggleMobileMenu}>Contact Us</Link>
-            <Link href="/accomodation" className={`mobile-nav-item ${pathname === "/accomodation" ? "active" : ""}`} onClick={toggleMobileMenu}>Accomodation</Link>
+            <Link href="/accommodation" className={`mobile-nav-item ${pathname === "/accommodation" ? "active" : ""}`} onClick={toggleMobileMenu}>Accomodation</Link>
             <Link href="/special-dates" className={`mobile-nav-item ${pathname === "/special-dates" ? "active" : ""}`} onClick={toggleMobileMenu}>Special Dates</Link>
             
             <div className="mobile-dropdown">
