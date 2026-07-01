@@ -15,37 +15,38 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.rannutsavgujarat.net"),
 
   title: {
-    default: "Official Rann Utsav Tent City Dhordo 2025-26 | Book Luxury Tents",
+    default:
+      "Rann Utsav Gujarat 2026-27 | White Rann Festival | Book Tent City",
     template: "%s | Rann Utsav Gujarat",
   },
 
   description:
-    "Book Official Rann Utsav Tent City Dhordo 2025-26 packages. Experience luxury tents, White Rann, cultural performances, local cuisine, sightseeing and unforgettable desert adventures in Kutch, Gujarat.",
+    "Explore the beauty of Rann Utsav Gujarat 2026-27 with Tent City stays, White Rann sightseeing, cultural programs, local cuisine and unforgettable desert experiences in Kutch. Book your Rann Utsav package online.",
 
   applicationName: "Rann Utsav Gujarat",
 
   keywords: [
     "Rann Utsav",
     "Rann Utsav Gujarat",
-    "Rann Utsav 2025",
     "Rann Utsav 2026",
-    "Rann Utsav Booking",
-    "Rann Utsav Online Booking",
-    "Tent City Dhordo",
-    "Dhordo Tent Booking",
+    "Rann Utsav 2027",
+    "White Rann Festival",
     "White Rann",
     "White Desert Gujarat",
     "Rann of Kutch",
-    "Kutch Tourism",
+    "Rann Utsav Booking",
+    "Book Rann Utsav",
+    "Tent City Dhordo",
+    "Tent City Gujarat",
+    "Dhordo Tent Booking",
     "Luxury Tent Booking",
     "Rann Utsav Packages",
     "Rann Utsav Price",
     "Rann Utsav Accommodation",
-    "Kutch Festival",
+    "Kutch Tourism",
     "Gujarat Tourism",
-    "White Rann Festival",
-    "Dhordo Gujarat",
-    "Rann Utsav Official",
+    "Kutch Festival",
+    "Desert Festival Gujarat",
   ],
 
   authors: [
@@ -69,17 +70,17 @@ export const metadata: Metadata = {
     siteName: "Rann Utsav Gujarat",
 
     title:
-      "Official Rann Utsav Tent City Dhordo 2025-26 | Book Luxury Tents",
+      "Rann Utsav Gujarat 2026-27 | White Rann Festival | Book Tent City",
 
     description:
-      "Book luxury tents at Tent City Dhordo for Rann Utsav 2025-26. Enjoy White Rann, cultural performances, sightseeing, delicious Gujarati cuisine and premium accommodation.",
+      "Explore the beauty of Rann Utsav Gujarat with Tent City stays, White Rann sightseeing, cultural programs, local cuisine and unforgettable desert experiences in Kutch.",
 
     images: [
       {
         url: "/img/Dhordo_0471.jpg",
         width: 1200,
         height: 630,
-        alt: "Official Rann Utsav Tent City Dhordo",
+        alt: "Rann Utsav Tent City Dhordo White Rann",
       },
     ],
   },
@@ -88,10 +89,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
 
     title:
-      "Official Rann Utsav Tent City Dhordo 2025-26 | Book Online",
+      "Rann Utsav Gujarat 2026-27 | White Rann Festival | Book Online",
 
     description:
-      "Book luxury tents in Tent City Dhordo for Rann Utsav Gujarat 2025-26.",
+      "Explore Tent City, White Rann, cultural programs and local cuisine. Book your Rann Utsav Gujarat package online.",
 
     images: ["/img/Dhordo_0471.jpg"],
   },
@@ -155,7 +156,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
           rel="stylesheet"
         />
-
         <meta name="theme-color" content="#ffffff" />
       </head>
 
@@ -177,10 +177,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Event",
-              name: "Rann Utsav Tent City Dhordo 2025-26",
+              name: "Rann Utsav Gujarat 2026-27",
 
-              startDate: "2025-11-01",
-              endDate: "2026-02-28",
+              startDate: "2026-09-01",
+              endDate: "2027-02-28",
 
               eventAttendanceMode:
                 "https://schema.org/OfflineEventAttendanceMode",
@@ -193,7 +193,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
               ],
 
               description:
-                "Official Rann Utsav Tent City booking in Dhordo, Gujarat. Luxury tents, cultural performances, White Rann sightseeing and delicious Gujarati cuisine.",
+  "Explore Rann Utsav Gujarat 2026-27 with Tent City accommodation, White Rann sightseeing, cultural performances, local cuisine and unforgettable desert experiences in Kutch.",
 
               location: {
                 "@type": "Place",
