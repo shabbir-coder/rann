@@ -16,37 +16,65 @@ export const metadata: Metadata = {
 
   title: {
     default:
-      "Rann Utsav Gujarat 2026-27 | White Rann Festival | Book Tent City",
+      "Rann Utsav Gujarat 2026-27 | White Rann Festival | Book Tent City Dhordo",
     template: "%s | Rann Utsav Gujarat",
   },
 
   description:
-    "Explore the beauty of Rann Utsav Gujarat 2026-27 with Tent City stays, White Rann sightseeing, cultural programs, local cuisine and unforgettable desert experiences in Kutch. Book your Rann Utsav package online.",
+    "Book Rann Utsav Gujarat 2026-27 packages with Tent City Dhordo stays, White Rann of Kutch sightseeing, cultural programs, local Kutchi cuisine and desert safari experiences. Compare prices and reserve your Rann Utsav tour online.",
 
   applicationName: "Rann Utsav Gujarat",
 
   keywords: [
+    // Brand / primary
     "Rann Utsav",
     "Rann Utsav Gujarat",
     "Rann Utsav 2026",
     "Rann Utsav 2027",
-    "White Rann Festival",
-    "White Rann",
-    "White Desert Gujarat",
-    "Rann of Kutch",
     "Rann Utsav Booking",
     "Book Rann Utsav",
-    "Tent City Dhordo",
-    "Tent City Gujarat",
-    "Dhordo Tent Booking",
-    "Luxury Tent Booking",
+    "Rann Utsav Package",
     "Rann Utsav Packages",
     "Rann Utsav Price",
     "Rann Utsav Accommodation",
+
+    // Tent City / Dhordo
+    "Rann Utsav Tent City",
+    "Tent City Dhordo",
+    "Dhordo Tent Booking",
+    "Luxury Tent Booking",
+    "Dhordo Gujarat",
+    "Dhordo Village Kutch",
+    "Tent City Dholavira",
+
+    // White Rann / Desert
+    "White Rann Festival",
+    "White Rann of Kutch",
+    "White Desert Gujarat",
+    "Kachchh White Desert",
+
+    // Rann of Kutch generic (high volume)
+    "Rann of Kutch",
+    "Rann of Kutch Festival",
+    "Rann of Kutch Packages",
+    "Great Rann of Kutch",
+    "Little Rann of Kutch",
+    "Rann of Kachchh",
+
+    // Kutch / Gujarat tourism
+    "Kutch Festival",
+    "Kachchh Festival",
+    "Kutch Tour Packages",
+    "Kutch Travel Packages",
+    "Kutch Holiday Packages",
+    "Gujarat Kutch Tour Packages",
     "Kutch Tourism",
     "Gujarat Tourism",
-    "Kutch Festival",
     "Desert Festival Gujarat",
+
+    // Travel/route intent
+    "Ahmedabad to Kutch",
+    "Dholavira Tent City",
   ],
 
   authors: [
@@ -70,10 +98,10 @@ export const metadata: Metadata = {
     siteName: "Rann Utsav Gujarat",
 
     title:
-      "Rann Utsav Gujarat 2026-27 | White Rann Festival | Book Tent City",
+      "Rann Utsav Gujarat 2026-27 | White Rann Festival | Book Tent City Dhordo",
 
     description:
-      "Explore the beauty of Rann Utsav Gujarat with Tent City stays, White Rann sightseeing, cultural programs, local cuisine and unforgettable desert experiences in Kutch.",
+      "Book Rann Utsav Gujarat packages with Tent City Dhordo stays, White Rann of Kutch sightseeing, cultural programs and desert experiences in Kutch.",
 
     images: [
       {
@@ -193,7 +221,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
               ],
 
               description:
-  "Explore Rann Utsav Gujarat 2026-27 with Tent City accommodation, White Rann sightseeing, cultural performances, local cuisine and unforgettable desert experiences in Kutch.",
+                "Explore Rann Utsav Gujarat 2026-27 with Tent City accommodation, White Rann sightseeing, cultural performances, local cuisine and unforgettable desert experiences in Kutch.",
 
               location: {
                 "@type": "Place",

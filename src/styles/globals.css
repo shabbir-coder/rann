@@ -943,9 +943,9 @@
   font-weight: bold;
 }
 
-.custom-table tbody tr:hover {
+/* .custom-table tbody tr:hover {
   background-color: rgba(184, 46, 136, 0.2);
-}
+} */
 
 /* Scrollbar Styling */
 .table-container::-webkit-scrollbar {

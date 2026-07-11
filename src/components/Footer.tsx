@@ -65,7 +65,7 @@ export const Footer = () => {
                             </p>
                             <p className="footer-text">
                                 <FaEnvelopeOpen className="footer-icon" />
-                                <a href="mailto:info@therannutsav.com" className="footer-link">info@therannutsav.com</a>
+                                <a href="mailto:info@ranutsav.net" className="footer-link">info@ranutsav.net</a>
                             </p>
                         </div>
                     </div>

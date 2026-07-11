@@ -5,40 +5,41 @@ import React from "react";
 
 const timelineData = [
   {
-    year: "2025",
+    year: "2026",
     events: [
       {
-        month: "NOVEMBER 2025",
+        month: "NOVEMBER 2026",
         details: [
-          { date: "14th to 16th", event: "Full Moon Festival"},
-          { date: "30th", event: "Dark Moon Stargazing"},
+          { date: "8th to 14th", event: "Diwali Week" },
+          { date: "9th", event: "Dark Moon Stargazing" },
+          { date: "22nd to 25th", event: "Full Moon Festival" },
         ],
       },
       {
-        month: "DECEMBER 2025",
+        month: "DECEMBER 2026",
         details: [
-          { date: "14th to 16th", event: "Full Moon Festival"},
-          { date: "20th to 31st", event: "Christmas Week"},
-          { date: "30th", event: "Dark Moon Stargazing"},
+          { date: "8th", event: "Dark Moon Stargazing" },
+          { date: "18th Dec to 2nd Jan", event: "Christmas Week" },
+          { date: "21st to 24th", event: "Full Moon Festival" },
         ],
       },
     ],
   },
   {
-    year: "2026",
+    year: "2027",
     events: [
       {
-        month: "JANUARY 2026",
+        month: "JANUARY 2027",
         details: [
-          { date: "12th to 14th", event: "Full Moon Festival"},
-          { date: "29th", event: "Dark Moon Stargazing"},
+          { date: "7th", event: "Dark Moon Stargazing" },
+          { date: "20th to 23rd", event: "Full Moon Festival" },
         ],
       },
       {
-        month: "FEBRUARY 2026",
+        month: "FEBRUARY 2027",
         details: [
-          { date: "11th to 13th", event: "Full Moon Festival"},
-          { date: "28th", event: "Dark Moon Stargazing"},
+          { date: "6th", event: "Dark Moon Stargazing" },
+          { date: "18th to 21st", event: "Full Moon Festival" },
         ],
       },
     ],

@@ -10,7 +10,7 @@ const Header = () => {
           <div className="col-lg-7 px-5 text-start">
             <div className="h-100 d-inline-flex align-items-center py-3 me-4">
               <FaCalendar className="text-primary me-2"/>
-              <h6 className="text-primary fw-bold m-0">Nov 2025 to March 2026</h6>
+              <h6 className="text-primary fw-bold m-0">Nov 2026 to March 2027</h6>
             </div>
             
           </div>

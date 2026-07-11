@@ -8,152 +8,139 @@ import CancellationPolicy from '@/components/CancellationPolicy';
 
 const tariffData = [
   {
-    title: "Tariff for Nov 2024, Feb & March 2025 (Excluding Full Moon)",
+    title: "Tariff for November, February & March 2026-27 (Excluding Full Moon & Diwali)",
     data: [
       {
         roomType: "Super Premium Tent",
         prices: [
-          { nights: 1, rate: 9500, extraMattress: 5000 },
-          { nights: 2, rate: 18000, extraMattress: 10000 },
-          { nights: 3, rate: 25500, extraMattress: 15000 },
-          // { nights: 4, rate: 23500, extraMattress: 20000 },
+          { nights: 1, rate: 10300, extraMattress: 5500 },
+          { nights: 2, rate: 20600, extraMattress: 11000 },
+          { nights: 3, rate: 30900, extraMattress: 16500 },
         ],
       },
       {
         roomType: "Premium Tent",
         prices: [
-          { nights: 1, rate: 8500, extraMattress: 5000 },
-          { nights: 2, rate: 16000, extraMattress: 10000 },
-          { nights: 3, rate: 23000, extraMattress: 15000 },
-          // { nights: 4, rate: 29500, extraMattress: 20000 },
+          { nights: 1, rate: 9300, extraMattress: 5500 },
+          { nights: 2, rate: 18600, extraMattress: 11000 },
+          { nights: 3, rate: 27900, extraMattress: 16500 },
         ],
       },
       {
         roomType: "Deluxe AC Swiss Cottage",
         prices: [
-          { nights: 1, rate: 7500, extraMattress: 5000 },
-          { nights: 2, rate: 14000, extraMattress: 10000 },
-          { nights: 3, rate: 20000, extraMattress: 15000 },
-          // { nights: 4, rate: 25500, extraMattress: 20000 },
+          { nights: 1, rate: 8300, extraMattress: 4500 },
+          { nights: 2, rate: 16600, extraMattress: 9000 },
+          { nights: 3, rate: 24900, extraMattress: 13500 },
         ],
       },
       {
         roomType: "Non AC Swiss Cottage",
         prices: [
-          { nights: 1, rate: 5500, extraMattress: 4000 },
-          { nights: 2, rate: 11000, extraMattress: 8000 },
-          { nights: 3, rate: 14500, extraMattress: 12000 },
-          // { nights: 4, rate: 19000, extraMattress: 16000 },
+          { nights: 1, rate: 6300, extraMattress: 4500 },
+          { nights: 2, rate: 12600, extraMattress: 9000 },
+          { nights: 3, rate: 18900, extraMattress: 13500 },
         ],
       },
     ],
   },
   {
-    title: "Tariff for Nov 2024, Feb & March 2025 (Full Moon) & Dec & Jan (Excluding Full Moon & Christmas Period)",
+    title:
+      "Tariff for November & February 2026-27 (Full Moon & Diwali: 8th-14th Nov) and December & January (Excluding Full Moon & Christmas Week)",
     data: [
       {
         roomType: "Super Premium Tent",
         prices: [
-          { nights: 1, rate: 11500, extraMattress: 5500 },
-          { nights: 2, rate: 21500, extraMattress: 11000 },
-          { nights: 3, rate: 31000, extraMattress: 16500 },
-          // { nights: 4, rate: 41000, extraMattress: 22000 },
+          { nights: 1, rate: 9225, extraMattress: 6000 },
+          { nights: 2, rate: 18075, extraMattress: 12000 },
+          { nights: 3, rate: 26550, extraMattress: 18000 },
         ],
       },
       {
         roomType: "Premium Tent",
         prices: [
-          { nights: 1, rate: 10500, extraMattress: 5500 },
-          { nights: 2, rate: 19500, extraMattress: 11000 },
-          { nights: 3, rate: 28500, extraMattress: 16500 },
-          // { nights: 4, rate: 37500, extraMattress: 22000 },
+          { nights: 1, rate: 8475, extraMattress: 6000 },
+          { nights: 2, rate: 16575, extraMattress: 12000 },
+          { nights: 3, rate: 24300, extraMattress: 18000 },
         ],
       },
       {
         roomType: "Deluxe AC Swiss Cottage",
         prices: [
-          { nights: 1, rate: 9000, extraMattress: 5500 },
-          { nights: 2, rate: 16500, extraMattress: 11000 },
-          { nights: 3, rate: 23000, extraMattress: 16500 },
-          // { nights: 4, rate: 30000, extraMattress: 22000 },
+          { nights: 1, rate: 7725, extraMattress: 5000 },
+          { nights: 2, rate: 15075, extraMattress: 10000 },
+          { nights: 3, rate: 22050, extraMattress: 15000 },
         ],
       },
       {
         roomType: "Non AC Swiss Cottage",
         prices: [
-          { nights: 1, rate: 7500, extraMattress: 4500 },
-          { nights: 2, rate: 13500, extraMattress: 9000 },
-          { nights: 3, rate: 17500, extraMattress: 13500 },
-          // { nights: 4, rate: 23000, extraMattress: 18000 },
+          { nights: 1, rate: 6225, extraMattress: 5000 },
+          { nights: 2, rate: 12075, extraMattress: 10000 },
+          { nights: 3, rate: 17550, extraMattress: 15000 },
         ],
       },
     ],
   },
   {
-    title: "Tariff for Dec 2024 & Jan 2025 (20th Dec 2024 - 31st Dec 2024) & Full Moon",
+    title: "Tariff for December & January (Full Moon & Christmas: 18th Dec 2026 - 2nd Jan 2027)",
     data: [
       {
         roomType: "Super Premium Tent",
         prices: [
-          { nights: 1, rate: 13000, extraMattress: 5500 },
-          { nights: 2, rate: 23500, extraMattress: 11000 },
-          { nights: 3, rate: 34000, extraMattress: 16500 },
-          // { nights: 4, rate: 44000, extraMattress: 22000 },
+          { nights: 1, rate: 14300, extraMattress: 6000 },
+          { nights: 2, rate: 26600, extraMattress: 12000 },
+          { nights: 3, rate: 38900, extraMattress: 18000 },
         ],
       },
       {
         roomType: "Premium Tent",
         prices: [
-          { nights: 1, rate: 12000, extraMattress: 5500 },
-          { nights: 2, rate: 21500, extraMattress: 11000 },
-          { nights: 3, rate: 31000, extraMattress: 16500 },
-          // { nights: 4, rate: 40000, extraMattress: 22000 },
+          { nights: 1, rate: 13300, extraMattress: 6000 },
+          { nights: 2, rate: 24600, extraMattress: 12000 },
+          { nights: 3, rate: 35900, extraMattress: 18000 },
         ],
       },
       {
         roomType: "Deluxe AC Swiss Cottage",
         prices: [
-          { nights: 1, rate: 10500, extraMattress: 5500 },
-          { nights: 2, rate: 18500, extraMattress: 11000 },
-          { nights: 3, rate: 25500, extraMattress: 16500 },
-          // { nights: 4, rate: 34500, extraMattress: 22000 },
+          { nights: 1, rate: 12300, extraMattress: 5000 },
+          { nights: 2, rate: 22600, extraMattress: 10000 },
+          { nights: 3, rate: 32900, extraMattress: 15000 },
         ],
       },
       {
         roomType: "Non AC Swiss Cottage",
         prices: [
-          { nights: 1, rate: 8500, extraMattress: 4500 },
-          { nights: 2, rate: 15000, extraMattress: 9000 },
-          { nights: 3, rate: 21500, extraMattress: 13500 },
-          // { nights: 4, rate: 29500, extraMattress: 18000 },
+          { nights: 1, rate: 10300, extraMattress: 5000 },
+          { nights: 2, rate: 18600, extraMattress: 10000 },
+          { nights: 3, rate: 26900, extraMattress: 15000 },
         ],
       },
     ],
   },
   {
-    title: "All Days",
+    title: "All Days (1st November 2026 to 7th March 2027)",
     data: [
       {
         roomType: "Darbar Suite (4 Pax)",
         prices: [
-          { nights: 1, rate: 55000, extraMattress: 15000 },
-          { nights: 2, rate: 105000, extraMattress: 22500 },
-          { nights: 3, rate: 141000, extraMattress: 30000 },
-          // { nights: 4, rate: 176000, extraMattress: 37500 },
+          { nights: 1, rate: 70000, extraMattress: 7750 },
+          { nights: 2, rate: 140000, extraMattress: 15500 },
+          { nights: 3, rate: 210000, extraMattress: 23250 },
         ],
       },
       {
         roomType: "Rajwadi Suite (2 Pax)",
         prices: [
-          { nights: 1, rate: 35000, extraMattress: 10000 },
-          { nights: 2, rate: 65000, extraMattress: 15000 },
-          { nights: 3, rate: 90000, extraMattress: 22500 },
-          // { nights: 4, rate: 122500, extraMattress: 30000 },
+          { nights: 1, rate: 35000, extraMattress: 7750 },
+          { nights: 2, rate: 70000, extraMattress: 15500 },
+          { nights: 3, rate: 105000, extraMattress: 23250 },
         ],
       },
     ],
   },
-]
+];
 
 export default function Packages() {
   const [selectedNight, setSelectedNight] = useState<number | null>(1);

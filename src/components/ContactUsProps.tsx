@@ -20,8 +20,8 @@ const contactData = [
   {
     icon: <FaEnvelopeOpen className="text-primary" />,
     title: "Mail Now",
-    text: "info@therannutsav.com",
-    link: "mailto:info@therannutsav.com",
+    text: "info@ranutsav.net",
+    link: "mailto:info@ranutsav.net",
     delay: 0.5,
   },
 ];
