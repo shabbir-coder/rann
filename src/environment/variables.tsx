@@ -1,3 +1,3 @@
 export const environment = {
-    API_URL:'http://api.rannutsavgujarat.net/api'
+    API_URL:'https://api.rannutsavgujarat.net/api'
 }
