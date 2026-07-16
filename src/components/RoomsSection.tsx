@@ -10,7 +10,7 @@ const packagesList = [
         name: '1 Night / 2 days',
         places: 'Dhordo',
         itinerary: 'Lunch, Activities, Sunset point, Cultural Shows, Yoga ',
-        price: '₹5,500/pp',
+        price: '₹6,300/pp',
     },
     {
         id: 2,
@@ -18,7 +18,7 @@ const packagesList = [
         name: '2 Night / 3 days',
         places: 'Dhordo, Kala Dungar',
         itinerary: 'All of Day 1 and Kala Dungar and sightseeing',
-        price: '₹11,000/pp',
+        price: '₹12,600/pp',
     },
     {
         id: 3,
@@ -26,7 +26,7 @@ const packagesList = [
         name: '3 Night / 4 days',
         places: 'Dhordo, Kala Dungar, Dholavira',
         itinerary: 'All of Day 1, 2 and Dholavira (Road to heaven) ',
-        price: '₹14,500/pp',
+        price: '₹18,900/pp',
     },
 ];
 

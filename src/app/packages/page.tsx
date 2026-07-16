@@ -51,33 +51,33 @@ const tariffData = [
       {
         roomType: "Super Premium Tent",
         prices: [
-          { nights: 1, rate: 9225, extraMattress: 6000 },
-          { nights: 2, rate: 18075, extraMattress: 12000 },
-          { nights: 3, rate: 26550, extraMattress: 18000 },
+          { nights: 1, rate: 12300, extraMattress: 6000 },
+          { nights: 2, rate: 24100, extraMattress: 12000 },
+          { nights: 3, rate: 35400, extraMattress: 18000 },
         ],
       },
       {
         roomType: "Premium Tent",
         prices: [
-          { nights: 1, rate: 8475, extraMattress: 6000 },
-          { nights: 2, rate: 16575, extraMattress: 12000 },
-          { nights: 3, rate: 24300, extraMattress: 18000 },
+          { nights: 1, rate: 11300, extraMattress: 6000 },
+          { nights: 2, rate: 22100, extraMattress: 12000 },
+          { nights: 3, rate: 32400, extraMattress: 18000 },
         ],
       },
       {
         roomType: "Deluxe AC Swiss Cottage",
         prices: [
-          { nights: 1, rate: 7725, extraMattress: 5000 },
-          { nights: 2, rate: 15075, extraMattress: 10000 },
-          { nights: 3, rate: 22050, extraMattress: 15000 },
+          { nights: 1, rate: 10300, extraMattress: 5000 },
+          { nights: 2, rate: 20100, extraMattress: 10000 },
+          { nights: 3, rate: 29400, extraMattress: 15000 },
         ],
       },
       {
         roomType: "Non AC Swiss Cottage",
         prices: [
-          { nights: 1, rate: 6225, extraMattress: 5000 },
-          { nights: 2, rate: 12075, extraMattress: 10000 },
-          { nights: 3, rate: 17550, extraMattress: 15000 },
+          { nights: 1, rate: 8300, extraMattress: 5000 },
+          { nights: 2, rate: 16100, extraMattress: 10000 },
+          { nights: 3, rate: 23400, extraMattress: 15000 },
         ],
       },
     ],
