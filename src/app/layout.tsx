@@ -3,6 +3,7 @@ import "../styles/globals.css";
 import "../styles/bootstrap.min.css";
 import { ReactNode } from "react";
 import { Metadata } from "next";
+import Script from "next/script";
 
 import BootstrapClient from "@/utils/BootstrapClient";
 import Navbar from "@/components/NavBar";
@@ -211,6 +212,26 @@ export default function RootLayout({ children }: RootLayoutProps) {
           rel="stylesheet"
         />
         <meta name="theme-color" content="#ffffff" />
+
+        {/* Secure Privacy - consent banner script, loaded as early as possible */}
+        <Script
+          src="https://app.secureprivacy.ai/script/6a5735316f27920a373dae5f.js"
+          strategy="beforeInteractive"
+        />
+
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-ZPJZKJGZEN"
+          strategy="afterInteractive"
+        />
+        <Script id="google-tag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-ZPJZKJGZEN');
+          `}
+        </Script>
       </head>
 
       <body>
