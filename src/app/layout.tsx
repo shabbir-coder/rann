@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
   title: {
     default:
-      "Rann Utsav Gujarat 2026-27 | Rann of Kutch Festival | White Rann Tent City Dhordo",
+      "Rann Utsav Gujarat 2026-27 | Official Tent City Booking | Best Price",
     template: "%s | Rann Utsav Gujarat",
   },
 
@@ -26,20 +26,12 @@ export const metadata: Metadata = {
 
   applicationName: "Rann Utsav Gujarat",
 
+  // Trimmed from 80+ terms to a focused primary + secondary set to avoid
+  // keyword dilution (see SEO audit). Long-tail terms removed here should
+  // instead become dedicated landing pages / blog posts (see Content Gap
+  // recommendations) rather than being crammed into the homepage meta tags.
   keywords: [
-    // Highest volume (500K) — Rann of Kutch core cluster
-    "Rann of Kutch",
-    "Rann of Kachchh",
-    "Great Rann of Kutch",
-    "Great Rann of Kutch Gujarat",
-    "Gujarat Kutch Rann",
-    "Kachchh Ka Ran",
-    "Kutch Ka Rann",
-    "Kutch Ka Rann Gujarat",
-    "Bhuj and Kutch",
-    "Rann of Kutch Desert",
-
-    // High volume (50K)
+        // High volume (50K)
     "Rannutsav",
     "Rann of Kutch Festival",
     "Great Rann of Kutch Festival",
@@ -213,6 +205,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
         />
         <meta name="theme-color" content="#ffffff" />
 
+        {/* hreflang */}
+        <link
+          rel="alternate"
+          hrefLang="en-IN"
+          href="https://www.rannutsavgujarat.net/"
+        />
+
         {/* Secure Privacy - consent banner script, loaded as early as possible */}
         <Script
           src="https://app.secureprivacy.ai/script/6a5735316f27920a373dae5f.js"
@@ -255,7 +254,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
               name: "Rann Utsav Gujarat 2026-27",
 
               startDate: "2026-09-01",
-              endDate: "2027-02-28",
+              endDate: "2027-04-28",
 
               eventAttendanceMode:
                 "https://schema.org/OfflineEventAttendanceMode",
@@ -299,18 +298,90 @@ export default function RootLayout({ children }: RootLayoutProps) {
           }}
         />
 
-        {/* Organization Schema */}
+        {/* Organization / TravelAgency Schema */}
+        {/* NOTE: telephone, email and address below are placeholders taken
+            from the SEO audit example — replace with your real business
+            details, and fill in sameAs with your actual social profile
+            URLs (Facebook, Instagram, YouTube, etc.) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
+              "@type": "TravelAgency",
               name: "Rann Utsav Gujarat",
               url: "https://www.rannutsavgujarat.net",
-              logo:
-                "https://www.rannutsavgujarat.net/img/logo.png",
-              sameAs: [],
+              logo: "https://www.rannutsavgujarat.net/img/logo.png",
+              image: "https://www.rannutsavgujarat.net/img/Dhordo_0471.jpg",
+              telephone: "+91-9521265253",
+              email: "info@ranutsav.net",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Ahmedabad",
+                addressRegion: "Gujarat",
+                addressCountry: "IN",
+              },
+              sameAs: [
+                // "https://www.facebook.com/yourpage",
+                // "https://www.instagram.com/yourpage",
+                // "https://www.youtube.com/@yourchannel",
+              ],
+            }),
+          }}
+        />
+
+        {/* FAQ Schema */}
+        {/* NOTE: keep this in sync with the visible copy in FaqSection so
+            the structured data always matches what users see on the page.
+            Replace the placeholder answers below with your real FAQ copy. */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: "What is Rann Utsav?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Rann Utsav is an annual cultural festival held on the White Rann of Kutch in Gujarat, featuring Tent City accommodation, cultural performances, local cuisine and desert sightseeing.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Where is Rann Utsav held?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Rann Utsav is held at Tent City Dhordo, near the White Rann of Kutch in Gujarat, India.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "When does Rann Utsav 2026-27 take place?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Rann Utsav 2026-27 runs from November 2026 to April 2027.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "What is the best time to visit Rann Utsav?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "The best time to visit is during the full moon nights between December and April, when the White Rann is at its most scenic.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "How do I reach Rann Utsav Tent City Dhordo?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "The nearest airport and railway station are in Bhuj, roughly 80 km from Tent City Dhordo, from where taxis and buses are available.",
+                  },
+                },
+              ],
             }),
           }}
         />
